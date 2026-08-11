@@ -1,0 +1,1898 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover"><meta name="theme-color" content="#050607"><title>架空鉄道 発車標</title><style>
+*{box-sizing:border-box}body{margin:0;background:#050607;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}.app{min-height:100svh;padding-top:env(safe-area-inset-top);padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);padding-bottom:env(safe-area-inset-bottom)}.bar{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid #333;background:#090b0d;position:sticky;top:0;z-index:5}.bar b{flex:1}.clock{font-variant-numeric:tabular-nums}.btn{border:1px solid #444;background:#171b20;color:#fff;border-radius:8px;padding:8px 10px}.display{padding:8px}.panel{border:1px solid #454b52;border-radius:10px;overflow:hidden;background:linear-gradient(110deg,#11161b,#07090b)}.routeHead{display:flex;gap:10px;align-items:center;padding:9px 12px;border-bottom:1px solid #454b52}.code{min-width:42px;height:42px;border:4px solid var(--line,#1687d9);background:#fff;color:#111;border-radius:5px;display:grid;place-items:center;font-weight:900;font-size:20px}.routeName{font-size:21px;font-weight:800}.sub{font-size:12px;color:#c8ced4}.head,.train{display:grid;align-items:center;border-bottom:1px solid #3b4147}.concourse .head,.concourse .train{grid-template-columns:84px 100px 90px minmax(160px,1.2fr) 70px 64px minmax(300px,2fr) 120px}.head{font-size:11px;color:#bac1c8;padding:5px 8px}.train{min-height:62px;padding:5px 8px}.time{font-size:29px;font-weight:750;font-variant-numeric:tabular-nums}.badge{padding:5px 8px;border-radius:4px;text-align:center;font-weight:800;white-space:nowrap}.origin{font-size:12px;color:#ffd43b;font-weight:800}.dest{font-size:24px;font-weight:850;line-height:1.05}.dest small{font-size:12px;color:#c7ccd1;margin-left:6px;font-weight:500}.meta{text-align:center;font-weight:700}.status{font-weight:850;text-align:center;color:#ffd43b}.stops{display:flex;align-items:flex-end;gap:5px;overflow:hidden;white-space:nowrap}.stop{position:relative;background:#f4f4f4;color:#111;border-radius:2px;padding:7px 4px 3px;min-width:31px;text-align:center;font-size:10px;font-weight:800}.stop:before{content:"";position:absolute;top:-7px;left:50%;width:7px;height:7px;border-radius:50%;background:var(--svc,#2787dd);transform:translateX(-50%)}.stop.current{background:#3289e8;color:#fff;box-shadow:0 0 0 2px #76baff inset}.stop.current:after{content:"現在地";position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:8px;color:#6db5ff;white-space:nowrap}.notice{height:42px;display:flex;align-items:center;position:relative;overflow:hidden;background:#090909;font-size:17px;isolation:isolate}.notice::before,.notice::after{content:"";position:absolute;top:0;bottom:0;width:12%;z-index:3;pointer-events:none}.notice::before{left:0;background:linear-gradient(90deg,#b00000 0%,#7a0000 45%,#090909 100%)}.notice::after{right:0;background:linear-gradient(270deg,#b00000 0%,#7a0000 45%,#090909 100%)}.noticeWindow{position:absolute;left:12%;right:12%;top:0;bottom:0;overflow:hidden;display:flex;align-items:center;z-index:1}.noticeTrack{display:inline-block;white-space:nowrap;min-width:max-content;padding-left:100%;animation:marquee 20s linear infinite;color:#fff;will-change:transform}.notice b{color:#ffd43b}@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.platform{display:grid;grid-template-columns:minmax(240px,25%) 1fr}.platformInfo{border-right:1px solid #444;padding:14px;display:flex;flex-direction:column;justify-content:center}.platformNo{font-size:96px;font-weight:850;line-height:.85}.direction{font-size:18px;font-weight:750;margin:12px 0 5px}.codes{display:flex;gap:6px;margin-top:10px}.miniCode{padding:3px 5px;border-radius:3px;background:#fff;color:#111;font-weight:900;border:3px solid var(--line,#1687d9)}.platformRight .head,.platformRight .train{grid-template-columns:100px 110px 100px minmax(180px,1fr) 70px 70px}.platformRight .train{min-height:78px}.platformRight .dest{font-size:27px}.platformAlt{grid-column:1/-1;min-height:78px;padding:8px 14px;display:flex;align-items:center;border-bottom:1px solid #3b4147}.platformAlt .stops{width:100%}.arrival{color:#ff5b18;font-size:24px;font-weight:900;justify-content:center}.settings{display:none;position:fixed;inset:0;z-index:20;background:#f4f6f8;color:#18212b;overflow:auto;padding:14px}.settings.open{display:block}.settingsTop{position:sticky;top:-14px;background:#f4f6f8;padding:14px 0 10px;display:flex;gap:8px;z-index:2}.settings button{border:0;border-radius:8px;padding:10px 12px;background:#1677ff;color:#fff;font-weight:800}.settings .secondary{background:#dfe4e9;color:#17202a}.settings .danger{background:#c53c3c}.tabs{display:flex;gap:6px;overflow:auto;margin-bottom:10px}.tab{white-space:nowrap}.card{background:#fff;border:1px solid #d9dee3;border-radius:11px;padding:12px;margin:9px 0}.field{margin:8px 0}.field label{display:block;font-size:12px;color:#5c6670;margin-bottom:4px}.field input,.field select,.field textarea{width:100%;padding:10px;border:1px solid #c8ced5;border-radius:8px;background:#fff}.field textarea{min-height:130px;font-family:ui-monospace,monospace}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.screen{display:none}.screen.active{display:block}.rowEdit{display:grid;grid-template-columns:1fr 1fr auto;gap:6px;align-items:end}.hint{font-size:12px;color:#69737d;line-height:1.55}.saveNote{font-size:12px;color:#247346;font-weight:700}.hourGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.hourCell{display:flex;align-items:center;gap:5px;border:1px solid #d9dee3;border-radius:8px;padding:6px}.hourCell b{min-width:32px}@media(max-width:760px){.hourGrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){.platform{grid-template-columns:32% 68%}.platformNo{font-size:72px}.routeName{font-size:17px}.concourse{overflow-x:auto}.concourse .panel{min-width:1050px}.platformRight{overflow-x:auto}.platformRight>div{min-width:760px}.two,.three{grid-template-columns:1fr}.display{padding:4px}}
+
+/* Physical departure-board bezel + iPhone landscape safe area */
+.display{background:#030405}
+.display>.panel{position:relative;border:10px solid #20252a;border-radius:22px;box-shadow:0 0 0 2px #555b61 inset,0 8px 22px #000;outline:1px solid #090a0b}
+.display>.panel:before{content:"";position:absolute;inset:0;border-radius:11px;pointer-events:none;box-shadow:inset 0 0 18px rgba(255,255,255,.035)}
+@media (orientation:landscape){
+ body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);background:#050607}
+ .app{padding-top:env(safe-area-inset-top);padding-left:0;padding-right:0}
+ .bar{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+ .display{padding:12px max(14px,env(safe-area-inset-right)) 12px max(14px,env(safe-area-inset-left))}
+ .display>.panel{border-width:12px;border-radius:24px}
+}
+
+/* V7 display refinements: preserve V6 storage key/data */
+html,body,.app{width:100%;max-width:none;overflow-x:hidden}
+.display{width:100%;max-width:none;margin:0;padding:8px}
+.display>.panel{width:100%;max-width:none;margin:0}
+.platform{grid-template-columns:minmax(250px,26%) minmax(0,74%)}
+.platformInfo{position:relative;padding-left:28px;overflow:hidden}
+.platformInfo:before{content:"";position:absolute;left:10px;top:18px;bottom:18px;width:8px;border-radius:5px;background:var(--line,#1687d9);box-shadow:0 0 10px color-mix(in srgb,var(--line,#1687d9) 65%,transparent)}
+.platformRight{min-width:0;overflow:hidden}.platformRight>div{min-width:0!important;width:100%}
+.platformRight .head,.platformRight .train{grid-template-columns:minmax(88px,.8fr) minmax(105px,.9fr) minmax(95px,.85fr) minmax(210px,2.2fr) minmax(62px,.65fr) minmax(62px,.65fr);column-gap:18px;padding-left:16px;padding-right:16px}
+.concourse{width:100%;overflow:hidden}.concourse .panel{min-width:0!important;width:100%}
+.concourse .head,.concourse .train{grid-template-columns:minmax(92px,.75fr) minmax(118px,.95fr) minmax(105px,.85fr) minmax(190px,1.55fr) minmax(76px,.65fr) minmax(76px,.65fr) minmax(300px,2.6fr) minmax(130px,1.05fr);column-gap:18px;padding-left:16px;padding-right:16px}
+.noticeTrack{animation-name:marquee;animation-duration:20s;animation-timing-function:linear;animation-iteration-count:infinite}
+@media (orientation:landscape){
+ body{padding:0}.app{padding:0;width:100vw}.bar{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+ .display{width:100vw;padding:8px max(8px,env(safe-area-inset-right)) 8px max(8px,env(safe-area-inset-left))}
+ .display>.panel{width:100%;border-width:10px;border-radius:22px}
+ .platform{grid-template-columns:minmax(245px,25%) minmax(0,75%)}
+}
+
+/* V8 compact ultra-wide platform board. Storage/data schema intentionally unchanged. */
+@media (orientation:landscape){
+ .bar{height:42px;padding-top:4px;padding-bottom:4px;font-size:14px}
+ .display{padding:4px max(5px,env(safe-area-inset-right)) 4px max(5px,env(safe-area-inset-left));height:calc(100svh - 42px);display:flex;align-items:flex-start}
+ .display>.panel{border-width:7px;border-radius:18px;box-shadow:0 0 0 2px #555b61 inset,0 4px 12px #000}
+ .platform{grid-template-columns:23% 77%;width:100%;height:min(72vw,calc(100svh - 50px));max-height:430px;min-height:300px}
+ .platformInfo{padding:12px 10px 10px 30px;justify-content:flex-start}
+ .platformInfo:before{left:12px;top:14px;bottom:14px;width:7px}
+ .platformInfo .routeName{font-size:clamp(16px,2.05vw,27px);line-height:1.12;margin-top:2px}
+ .platformInfo .sub{font-size:clamp(9px,1.15vw,15px);line-height:1.25}
+ .platformNo{font-size:clamp(64px,9vw,118px);line-height:.78;margin:13px 0 10px}
+ .direction{font-size:clamp(14px,1.75vw,23px);line-height:1.15;margin:6px 0 4px}
+ .through{max-height:2.5em;overflow:hidden}
+ .codes{margin-top:auto}.miniCode{font-size:clamp(13px,1.4vw,19px);padding:2px 5px}
+ .platformRight,.platformRight>div{height:100%}
+ .platformRight>div{display:grid;grid-template-rows:38px repeat(3,1fr)}
+ .platformRight .head,.platformRight .train{grid-template-columns:15% 16% 15% minmax(0,36%) 9% 9%;column-gap:0;padding:0 10px}
+ .platformRight .head{font-size:clamp(9px,1.05vw,13px);height:38px}
+ .platformRight .train,.platformAlt{min-height:0!important;height:auto;padding-top:4px;padding-bottom:4px}
+ .platformRight .time{font-size:clamp(25px,3.25vw,43px)}
+ .platformRight .badge{font-size:clamp(12px,1.5vw,20px);padding:4px 6px}
+ .platformRight .origin{font-size:clamp(10px,1.2vw,16px)}
+ .platformRight .dest{font-size:clamp(20px,2.65vw,35px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .platformRight .dest small{display:block;margin:2px 0 0;font-size:clamp(9px,1.05vw,14px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .platformRight .meta{font-size:clamp(11px,1.3vw,17px)}
+ .platformAlt{padding:6px 12px}
+ .stopPanel{overflow:hidden;background:linear-gradient(180deg,#090c10,#050607)}
+ .stopPanel .stops{height:100%;align-items:center;gap:0;overflow:hidden;position:relative;padding:15px 4px 3px}
+ .stopPanel .stops:before{content:"";position:absolute;left:10px;right:10px;top:18px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--line,#2787dd),#2d7fe0);box-shadow:0 0 7px rgba(45,127,224,.55)}
+ .stopPanel .stop{z-index:1;flex:1;min-width:0;max-width:74px;margin:0 2px;padding:9px 2px 3px;font-size:clamp(7px,.85vw,11px);border-radius:2px;box-shadow:0 1px 3px #000;overflow:hidden;text-overflow:ellipsis}
+ .stopPanel .stop:before{top:-9px;width:8px;height:8px;border:2px solid #fff;background:var(--svc,#2787dd)}
+ .stopPanel .stop.current{background:#d32626;color:#fff;box-shadow:0 0 0 2px #ff7777 inset,0 0 8px #b00000}
+ .stopPanel .stop.current:after{top:-20px;font-size:7px;color:#ff7777}
+ .arrival{font-size:clamp(20px,2.65vw,35px);color:#ff6428;justify-content:center;white-space:nowrap;overflow:hidden}
+ .noticeSlot{padding:0 10px}.noticeSlot .notice{width:100%;height:100%;min-height:0}
+ .notice{height:34px;font-size:clamp(12px,1.35vw,18px)}
+}
+
+/* V9 phone-landscape fit: CSS-only; storage/schema untouched */
+@media (orientation:landscape){
+ .bar{height:34px;min-height:34px;padding:2px max(8px,env(safe-area-inset-right)) 2px max(8px,env(safe-area-inset-left));gap:6px;font-size:12px}
+ .bar .btn{padding:4px 7px;border-radius:6px;font-size:12px}
+ .clock{font-size:12px}
+ .display{height:calc(100svh - 34px);padding:2px max(3px,env(safe-area-inset-right)) 2px max(3px,env(safe-area-inset-left));align-items:stretch}
+ .display>.panel{height:100%;max-height:none;min-height:0;border-width:5px;border-radius:15px}
+ .platform{height:100%;max-height:none;min-height:0;grid-template-columns:21% 79%}
+ .platformInfo{padding:7px 7px 6px 22px}
+ .platformInfo:before{left:8px;top:8px;bottom:8px;width:5px}
+ .platformInfo .routeName{font-size:clamp(12px,1.7vw,20px);line-height:1.05}
+ .platformInfo .sub{font-size:clamp(7px,.9vw,11px);line-height:1.1}
+ .platformNo{font-size:clamp(50px,7vw,82px);margin:7px 0 5px;line-height:.8}
+ .direction{font-size:clamp(11px,1.35vw,16px);margin:3px 0;line-height:1.05}
+ .codes{margin-top:auto}.miniCode{font-size:11px;border-width:2px;padding:1px 3px}
+ .platformRight>div{grid-template-rows:24px repeat(3,minmax(0,1fr));height:100%}
+ .platformRight .head,.platformRight .train{grid-template-columns:14% 15% 14% minmax(0,39%) 9% 9%;padding:0 7px}
+ .platformRight .head{height:24px;font-size:9px}
+ .platformRight .train{min-height:0!important;height:auto;padding-top:1px;padding-bottom:1px}
+ .platformRight .time{font-size:clamp(20px,3vw,32px)}
+ .platformRight .badge{font-size:clamp(10px,1.35vw,15px);padding:3px 5px}
+ .platformRight .origin{font-size:clamp(8px,1vw,11px)}
+ .platformRight .dest{font-size:clamp(17px,2.35vw,26px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .platformRight .dest small{display:block;font-size:clamp(7px,.9vw,10px);margin:1px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .platformRight .meta{font-size:clamp(10px,1.25vw,14px);white-space:nowrap}
+ .platformAlt{min-height:0!important;height:auto;padding:2px 8px}
+ .stopPanel .stops{gap:3px;align-items:center}
+ .stop{min-width:25px;padding:5px 3px 2px;font-size:8px}
+ .stop:before{top:-4px;width:5px;height:5px}
+ .arrival{font-size:clamp(16px,2vw,23px);line-height:1}
+ .notice{height:100%;min-height:0;font-size:clamp(12px,1.55vw,18px)}
+ .noticeTrack{padding-left:100%}
+}
+
+.bar{pointer-events:auto}.bar .btn{position:relative;z-index:8;pointer-events:auto}.settings{z-index:9999}
+
+/* V10: strict viewport fit + tighter spacing. Data/storage schema unchanged. */
+html,body{width:100%;height:100%;overflow:hidden}.app{width:100%;height:100%;overflow:hidden}.display{overflow:hidden}.panel,.platform,.platformRight,.platformRight>div{max-width:100%;overflow:hidden}
+@media (orientation:landscape){
+ .bar{height:30px;min-height:30px;padding:1px max(6px,env(safe-area-inset-right)) 1px max(6px,env(safe-area-inset-left));gap:4px;font-size:11px}
+ .bar .btn{padding:3px 6px;font-size:11px}
+ .display{height:calc(100svh - 30px);padding:2px max(2px,env(safe-area-inset-right)) 2px max(2px,env(safe-area-inset-left));overflow:hidden}
+ .display>.panel{height:100%;width:100%;min-width:0;border-width:4px;border-radius:13px;overflow:hidden}
+ .platform{grid-template-columns:19% minmax(0,81%);height:100%;min-width:0}
+ .platformInfo{min-width:0;padding:5px 5px 4px 18px}.platformInfo:before{left:6px;top:6px;bottom:6px;width:4px}
+ .platformInfo .routeName{font-size:clamp(11px,1.45vw,17px)}.platformInfo .sub{font-size:clamp(6px,.75vw,9px)}
+ .platformNo{font-size:clamp(42px,5.8vw,68px);margin:4px 0 3px}.direction{font-size:clamp(9px,1.1vw,13px);margin:2px 0}.through{max-height:2.2em}
+ .platformRight>div{grid-template-rows:20px repeat(3,minmax(0,1fr));min-width:0}
+ .platformRight .head,.platformRight .train{grid-template-columns:13% 13% 12% minmax(0,43%) 9% 10%;gap:0;padding:0 4px;min-width:0}
+ .platformRight .head{height:20px;font-size:8px}.platformRight .train{padding-top:0;padding-bottom:0;overflow:hidden}
+ .platformRight .time{font-size:clamp(17px,2.45vw,27px)}.platformRight .badge{font-size:clamp(8px,1.05vw,12px);padding:2px 4px}
+ .platformRight .origin{font-size:clamp(7px,.82vw,9px)}.platformRight .dest{font-size:clamp(14px,1.85vw,21px)}
+ .platformRight .dest small{font-size:clamp(6px,.72vw,8px)}.platformRight .meta{font-size:clamp(8px,1vw,11px);overflow:hidden;text-overflow:ellipsis}
+ .platformAlt{padding:1px 5px;overflow:hidden}.stopPanel .stops{padding:10px 2px 1px;gap:1px}.stopPanel .stops:before{top:12px;height:2px}
+ .stopPanel .stop{font-size:clamp(6px,.65vw,8px);padding:5px 1px 2px;margin:0 1px;max-width:58px}.arrival{font-size:clamp(13px,1.65vw,18px)}
+ .noticeWindow{left:10%;right:10%}.notice::before,.notice::after{width:10%}
+ .concourse .head,.concourse .train{grid-template-columns:7% 8% 7% 15% 6% 6% minmax(0,39%) 12%;column-gap:0;padding:0 5px}
+ .concourse .train{min-height:43px}.concourse .time{font-size:clamp(16px,2vw,23px)}.concourse .dest{font-size:clamp(14px,1.7vw,20px)}
+}
+.settings.open{display:block!important;pointer-events:auto!important}.settings{pointer-events:none}.settings.open{pointer-events:auto}
+
+
+/* V11: landscape vertical scrolling, compact vertical stop list, larger platform text.
+   Storage key/data schema intentionally unchanged. */
+html,body{height:auto!important;min-height:100%;overflow-x:hidden!important;overflow-y:auto!important}
+.app{height:auto!important;min-height:100svh!important;overflow:visible!important}
+.display{height:auto!important;min-height:0!important;overflow:visible!important}
+.dest small{display:block!important;margin:2px 0 0!important;line-height:1.05!important;color:#c7ccd1!important;font-weight:500!important}
+
+/* Stop list: compact vertical station names so every stop fits inside the board. */
+.stops{display:flex!important;align-items:stretch!important;gap:1px!important;overflow:hidden!important;width:100%!important;min-width:0!important;padding:8px 2px 2px!important;position:relative!important}
+.stops:before{content:"";position:absolute;left:5px;right:5px;top:9px;height:2px;border-radius:2px;background:var(--svc,#2787dd);opacity:.95}
+.stop{z-index:1!important;flex:1 1 0!important;min-width:0!important;max-width:none!important;height:45px!important;padding:7px 1px 1px!important;margin:0!important;border-radius:2px!important;font-size:7px!important;line-height:1!important;writing-mode:vertical-rl!important;text-orientation:upright!important;letter-spacing:0!important;overflow:hidden!important;text-overflow:clip!important;white-space:normal!important;display:flex!important;align-items:center!important;justify-content:flex-start!important}
+.stop:before{top:-2px!important;width:5px!important;height:5px!important;border:1px solid #fff!important}
+.stop.current:after{content:""!important;display:none!important}
+
+@media (orientation:landscape){
+ body{overflow-y:auto!important;-webkit-overflow-scrolling:touch!important}
+ .app{height:auto!important;min-height:100svh!important;overflow:visible!important}
+ .bar{position:sticky!important;top:0!important;z-index:50!important}
+ .display{height:auto!important;min-height:0!important;overflow:visible!important;padding-bottom:12px!important;align-items:flex-start!important}
+ .display>.panel{height:auto!important;min-height:300px!important;max-height:none!important;overflow:hidden!important}
+
+ /* platform board: use space, larger readable text, less dead padding */
+ .platform{height:auto!important;min-height:318px!important;grid-template-columns:20% minmax(0,80%)!important}
+ .platformInfo{padding:7px 6px 7px 20px!important;justify-content:flex-start!important}
+ .platformInfo:before{left:7px!important;top:7px!important;bottom:7px!important;width:5px!important}
+ .platformInfo .routeName{font-size:clamp(15px,2.05vw,24px)!important;line-height:1.06!important}
+ .platformInfo .sub{font-size:clamp(9px,1.05vw,13px)!important;line-height:1.12!important}
+ .platformNo{font-size:clamp(62px,8vw,100px)!important;line-height:.82!important;margin:7px 0 5px!important}
+ .direction{font-size:clamp(13px,1.6vw,19px)!important;line-height:1.08!important;margin:4px 0 3px!important}
+ .codes{margin-top:7px!important}
+ .platformRight,.platformRight>div{height:auto!important;min-height:0!important;overflow:hidden!important}
+ .platformRight>div{display:grid!important;grid-template-rows:24px repeat(3,minmax(82px,auto))!important}
+ .platformRight .head,.platformRight .train{grid-template-columns:13% 14% 13% minmax(0,42%) 9% 9%!important;padding:0 5px!important;column-gap:0!important}
+ .platformRight .head{height:24px!important;font-size:9px!important}
+ .platformRight .train{min-height:82px!important;padding:3px 0!important;overflow:hidden!important}
+ .platformRight .time{font-size:clamp(25px,3.4vw,40px)!important}
+ .platformRight .badge{font-size:clamp(12px,1.55vw,18px)!important;padding:4px 5px!important}
+ .platformRight .origin{font-size:clamp(10px,1.15vw,14px)!important}
+ .platformRight .dest{font-size:clamp(21px,2.65vw,31px)!important;line-height:1!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+ .platformRight .dest small{font-size:clamp(9px,1.05vw,13px)!important;margin-top:3px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+ .platformRight .meta{font-size:clamp(11px,1.3vw,16px)!important;white-space:nowrap!important}
+ .platformAlt{min-height:82px!important;height:82px!important;padding:3px 5px!important;overflow:hidden!important}
+ .stopPanel .stops{height:76px!important;padding:10px 2px 2px!important;align-items:stretch!important}
+ .stopPanel .stops:before{top:10px!important;height:2px!important}
+ .stopPanel .stop{height:61px!important;font-size:clamp(6px,.72vw,9px)!important;padding-top:7px!important}
+ .arrival{font-size:clamp(20px,2.5vw,30px)!important}
+
+ /* concourse: vertical stops and consistent English line below Japanese */
+ .concourse .train{min-height:58px!important;padding-top:2px!important;padding-bottom:2px!important}
+ .concourse .dest{font-size:clamp(16px,1.9vw,23px)!important;line-height:1!important}
+ .concourse .dest small{font-size:clamp(8px,.9vw,11px)!important;margin-top:2px!important}
+ .concourse .stops{height:52px!important;padding-top:8px!important}
+ .concourse .stop{height:43px!important;font-size:clamp(5px,.55vw,7px)!important;padding-top:6px!important}
+}
+
+/* V10: platform current-position panel + portrait horizontal scrolling */
+.currentPositionPanel{justify-content:center;gap:14px;background:linear-gradient(90deg,#07111a,#0b1721 45%,#07111a);font-weight:800}
+.currentPositionLabel{font-size:clamp(11px,1.25vw,16px);color:#a9c8df;letter-spacing:.08em;white-space:nowrap}
+.currentPositionMain{display:flex;align-items:center;gap:10px;min-width:0}
+.currentPositionStation{font-size:clamp(22px,2.8vw,34px);font-weight:900;white-space:nowrap}
+.currentPositionArrow{font-size:clamp(18px,2.2vw,28px);color:var(--line,#1687d9);font-weight:900}
+.currentPositionNext{font-size:clamp(14px,1.65vw,21px);font-weight:800;white-space:nowrap;color:#dce8f0}
+.currentPositionNote{font-size:clamp(9px,1vw,12px);color:#93a7b5;white-space:nowrap}
+@media (orientation:portrait){
+  html,body{overflow-x:auto!important}
+  .app{min-width:920px!important}
+  .display{overflow-x:auto!important;-webkit-overflow-scrolling:touch;padding-bottom:12px!important}
+  .platform,.concourse .panel{min-width:900px!important}
+  .bar{min-width:920px!important}
+}
+
+/* V14: always-accessible settings control. Keep storage/data schema unchanged. */
+#settingsFab{
+  position:fixed!important;
+  left:max(8px,env(safe-area-inset-left))!important;
+  top:max(8px,env(safe-area-inset-top))!important;
+  z-index:2147483000!important;
+  min-width:46px;min-height:40px;
+  padding:8px 10px;
+  border:1px solid #555;background:rgba(18,22,27,.96);color:#fff;
+  border-radius:9px;font-weight:800;
+  box-shadow:0 4px 16px rgba(0,0,0,.45);
+  pointer-events:auto!important;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+}
+.settings.open~#settingsFab,#settings.open + #settingsFab{display:none!important}
+@media (orientation:portrait){
+  #settingsBtn{visibility:hidden!important;pointer-events:none!important}
+}
+@media (orientation:landscape){
+  #settingsFab{left:max(6px,env(safe-area-inset-left))!important;top:max(6px,env(safe-area-inset-top))!important}
+}
+
+/* V19 header controls: keep both buttons directly beside the title and tappable on iPhone. */
+.bar{display:flex!important;align-items:center!important;gap:8px!important;overflow:visible!important;z-index:1000!important;pointer-events:auto!important}
+.barTitle{flex:0 0 auto!important;white-space:nowrap}
+.barActions{display:flex!important;align-items:center!important;gap:6px!important;flex:0 0 auto!important;position:relative!important;z-index:1002!important}
+.barActions .btn,#settingsBtn,#modeBtn{display:inline-flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;touch-action:manipulation!important;position:relative!important;z-index:1003!important;min-height:38px!important;align-items:center!important;justify-content:center!important}
+.clock{margin-left:auto!important;flex:0 0 auto!important}
+#settingsFab{display:none!important}
+@media(max-width:760px){#settingsBtn,#modeBtn{display:inline-flex!important;visibility:visible!important;pointer-events:auto!important}.bar{padding:7px 8px!important;gap:6px!important}.barTitle{font-size:14px!important}.barActions .btn{padding:7px 8px!important;font-size:12px!important}.clock{font-size:11px!important}}
+
+
+/* V20 orientation-stable layout + reference-style stop diagram.
+   CSS/UI only; persistent data key and schema are unchanged. */
+html,body{max-width:100%!important}
+body{overflow-y:auto!important}
+.app{width:100%!important;min-width:0!important;overflow:visible!important}
+.bar{width:100%!important;min-width:0!important;max-width:100%!important;position:sticky!important;top:0!important}
+.display{width:100%!important;max-width:100%!important;overflow-x:auto!important;overflow-y:visible!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior-x:contain}
+
+/* English is always a second line, never inline with Japanese. */
+.dest small,.routeHead .sub,.platformInfo .sub{display:block!important;margin-left:0!important}
+
+/* Reference-style stop list: no white boxes, white vertical labels, one horizontal line. */
+.stops{
+  position:relative!important;
+  display:grid!important;
+  grid-template-columns:repeat(var(--stop-count),minmax(0,1fr))!important;
+  align-items:end!important;
+  justify-items:start!important;
+  width:100%!important;
+  height:50px!important;
+  min-width:0!important;
+  padding:0 2px 8px!important;
+  gap:0!important;
+  overflow:hidden!important;
+  white-space:normal!important;
+}
+.stops::before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;right:0!important;bottom:6px!important;top:auto!important;
+  height:2px!important;
+  border-radius:0!important;
+  background:var(--svc,#2787dd)!important;
+  opacity:1!important;
+}
+.stop{
+  position:relative!important;
+  z-index:1!important;
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:flex-end!important;
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  height:42px!important;
+  margin:0!important;
+  padding:0 1px 7px!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  border:0!important;
+  border-radius:0!important;
+  color:#fff!important;
+  font-size:clamp(6px,.62vw,9px)!important;
+  font-weight:750!important;
+  line-height:1!important;
+  writing-mode:vertical-rl!important;
+  text-orientation:upright!important;
+  overflow:hidden!important;
+}
+.stop::before{
+  content:""!important;
+  position:absolute!important;
+  left:50%!important;bottom:3px!important;top:auto!important;
+  width:5px!important;height:5px!important;
+  transform:translateX(-50%)!important;
+  border:1px solid #fff!important;
+  border-radius:50%!important;
+  background:var(--svc,#2787dd)!important;
+}
+.stop.current{background:transparent!important;color:#ff5a43!important;box-shadow:none!important;text-shadow:0 0 5px rgba(255,70,45,.65)!important}
+.stop.current::before{background:#ff3b30!important;border-color:#ffb3aa!important;box-shadow:0 0 5px #ff3b30!important}
+.stop.current::after{display:none!important;content:""!important}
+/* A short list still begins at the left, but uses wider regular spacing. */
+.stops.fewStops{grid-template-columns:repeat(var(--stop-count),minmax(42px,72px))!important;justify-content:start!important;column-gap:clamp(12px,2vw,30px)!important}
+
+/* Keep the notice animation alive in either orientation and clip it inside its window. */
+.notice{overflow:hidden!important;contain:paint!important}
+.noticeWindow{overflow:hidden!important;clip-path:inset(0)!important}
+.noticeTrack{animation:marquee 20s linear infinite!important;animation-play-state:running!important;white-space:nowrap!important;will-change:transform!important}
+
+/* Portrait is literally the same wide board viewed through a narrow viewport.
+   No responsive rearrangement: swipe horizontally to see the rest. */
+@media (orientation:portrait){
+  html,body{overflow-x:hidden!important}
+  .app{min-width:0!important;width:100%!important}
+  .bar{min-width:0!important;width:100vw!important}
+  .display{width:100vw!important;padding:5px!important;overflow-x:auto!important;overflow-y:visible!important}
+  .concourse,.platform{width:1180px!important;min-width:1180px!important;max-width:none!important}
+  .concourse .panel{width:1180px!important;min-width:1180px!important;max-width:none!important}
+  .platform{grid-template-columns:236px 944px!important}
+  .platformRight,.platformRight>div{width:944px!important;min-width:944px!important;max-width:944px!important;overflow:hidden!important}
+  .platformRight .head,.platformRight .train{grid-template-columns:120px 130px 115px 1fr 78px 78px!important;column-gap:8px!important;padding-left:10px!important;padding-right:10px!important}
+  .concourse .head,.concourse .train{grid-template-columns:105px 120px 100px 180px 74px 74px 1fr 120px!important;column-gap:8px!important;padding-left:10px!important;padding-right:10px!important}
+  .platformInfo .routeName{font-size:22px!important}.platformNo{font-size:96px!important}.direction{font-size:18px!important}
+  .platformRight .time{font-size:34px!important}.platformRight .dest{font-size:28px!important}.platformRight .dest small{font-size:12px!important}
+  .platformRight .badge{font-size:16px!important}.platformRight .origin,.platformRight .meta{font-size:13px!important}
+  .concourse .train{min-height:60px!important}.concourse .time{font-size:27px!important}.concourse .dest{font-size:21px!important}
+  .stops{height:50px!important}.stop{height:42px!important;font-size:8px!important}
+}
+
+/* Landscape preserves the same geometry but scales spacing/fonts to the available width.
+   Nothing is allowed to overlap or escape its board cell. */
+@media (orientation:landscape){
+  html,body{overflow-x:hidden!important;overflow-y:auto!important}
+  .display{width:100%!important;overflow-x:hidden!important;padding:3px max(3px,env(safe-area-inset-right)) 8px max(3px,env(safe-area-inset-left))!important}
+  .concourse,.platform,.concourse .panel{width:100%!important;min-width:0!important;max-width:100%!important}
+  .platform{grid-template-columns:minmax(155px,20%) minmax(0,80%)!important}
+  .platformRight,.platformRight>div{min-width:0!important;max-width:100%!important;overflow:hidden!important}
+  .platformRight .head,.platformRight .train{grid-template-columns:12% 13% 12% minmax(0,45%) 9% 9%!important;column-gap:0!important;padding-left:4px!important;padding-right:4px!important}
+  .concourse .head,.concourse .train{grid-template-columns:7.5% 9% 7.5% 16% 6% 6% minmax(0,36%) 12%!important;column-gap:0!important;padding-left:4px!important;padding-right:4px!important}
+  .head>div,.train>div{min-width:0!important;overflow:hidden!important}
+  .dest{min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  .dest small{overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+  .meta,.origin,.status{min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+  .concourse .stops{height:47px!important}.concourse .stop{height:39px!important;font-size:clamp(5px,.55vw,7px)!important}
+  .stops.fewStops{column-gap:clamp(8px,1.4vw,20px)!important}
+}
+
+/* V21 fixes: same geometry in portrait/landscape, cleaner stop diagram, 3 platform trains. */
+.badge{border-radius:6px!important}
+
+/* Stop diagram: left aligned, consistent vertical labels, line ends at the terminal. */
+.stops{display:grid!important;align-items:end!important;justify-content:start!important;height:58px!important;padding:0 0 5px!important;overflow:hidden!important;position:relative!important;gap:0!important;background:transparent!important}
+.stops::before{display:none!important}
+.stop{position:relative!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;height:58px!important;padding:0 0 9px!important;margin:0!important;background:transparent!important;border:0!important;box-shadow:none!important;color:#fff!important;writing-mode:horizontal-tb!important;overflow:visible!important}
+.stopLabel{display:block!important;writing-mode:vertical-rl!important;text-orientation:upright!important;font-size:clamp(9px,.82vw,13px)!important;line-height:1!important;letter-spacing:0!important;max-height:47px!important;overflow:hidden!important;white-space:normal!important}
+.stop::before{content:""!important;position:absolute!important;left:50%!important;bottom:2px!important;width:7px!important;height:7px!important;transform:translateX(-50%)!important;border:1.5px solid #fff!important;border-radius:50%!important;background:var(--svc,#2787dd)!important;z-index:2!important}
+.stop:not(:last-child)::after{content:""!important;position:absolute!important;left:50%!important;bottom:5px!important;height:2px!important;width:100%!important;background:var(--svc,#2787dd)!important;z-index:1!important}
+.stops.manyStops{grid-template-columns:repeat(var(--stop-count),minmax(0,1fr))!important;width:100%!important}
+.stops.fewStops{grid-template-columns:repeat(var(--stop-count),56px)!important;column-gap:24px!important;width:100%!important}
+.stops.fewStops .stop:not(:last-child)::after{width:80px!important}
+.stop.current .stopLabel{color:#ff5a43!important;text-shadow:0 0 5px rgba(255,70,45,.65)!important}
+.stop.current::before{background:#ff3b30!important;border-color:#ffd0ca!important;box-shadow:0 0 5px #ff3b30!important}
+
+/* Concourse columns: more room for time/type/meta and no clipping. */
+.concourse .head,.concourse .train{grid-template-columns:8% 10% 8% 17% 7% 7% minmax(0,34%) 9%!important;column-gap:8px!important;padding-left:10px!important;padding-right:10px!important}
+.concourse .train{min-height:70px!important}
+.concourse .stops{height:62px!important}.concourse .stop{height:62px!important}.concourse .stopLabel{font-size:clamp(9px,.82vw,13px)!important;max-height:51px!important}
+.concourse .time{font-size:clamp(22px,2.45vw,32px)!important}.concourse .badge{font-size:clamp(13px,1.45vw,18px)!important;padding:5px 8px!important}
+.concourse .meta{font-size:clamp(13px,1.35vw,18px)!important}
+
+/* Platform always has header + 3 trains + one slim information strip. */
+.platformRight>div{display:grid!important;grid-template-rows:26px repeat(3,minmax(82px,1fr)) 44px!important;height:auto!important}
+.platformRight .train{min-height:82px!important}
+.platformRight .head,.platformRight .train{grid-template-columns:14% 14% 13% minmax(0,39%) 10% 10%!important;column-gap:10px!important;padding-left:12px!important;padding-right:12px!important}
+.platformRight .time{font-size:clamp(28px,3.25vw,42px)!important;white-space:nowrap!important}
+.platformRight .badge{font-size:clamp(14px,1.6vw,20px)!important;padding:5px 8px!important}
+.platformRight .meta{font-size:clamp(15px,1.55vw,20px)!important;font-weight:800!important}
+.platformRight .dest{font-size:clamp(24px,2.65vw,34px)!important}.platformRight .dest small{font-size:clamp(10px,1.05vw,14px)!important}
+.emptyTrain{opacity:.15!important}
+.platformInfoStrip{min-height:44px!important;height:44px!important;border-top:1px solid #3b4147!important;overflow:hidden!important;display:flex!important;align-items:center!important}
+.platformInfoStrip .platformAlt{border:0!important;width:100%!important;min-height:44px!important;height:44px!important;padding:0 12px!important}
+.platformInfoStrip.noticeSlot{padding:0!important}.platformInfoStrip .notice{height:44px!important;width:100%!important}
+.currentStrip{padding:0!important}
+
+/* Same board geometry in both orientations: portrait simply scrolls the same 1180px board. */
+.concourse,.platform{width:1180px!important;min-width:1180px!important;max-width:1180px!important}
+.concourse .panel{width:1180px!important;min-width:1180px!important;max-width:1180px!important}
+.platform{grid-template-columns:236px 944px!important}
+.platformRight,.platformRight>div{width:944px!important;min-width:944px!important;max-width:944px!important}
+.display{overflow-x:auto!important;overflow-y:visible!important;-webkit-overflow-scrolling:touch!important}
+@media (orientation:landscape){
+ .display{overflow-x:auto!important;overflow-y:visible!important}
+ .concourse,.platform,.concourse .panel{width:1180px!important;min-width:1180px!important;max-width:1180px!important}
+ .platform{grid-template-columns:236px 944px!important}
+ .platformRight,.platformRight>div{width:944px!important;min-width:944px!important;max-width:944px!important}
+ .platformRight .head,.platformRight .train{grid-template-columns:132px 132px 123px minmax(0,368px) 94px 95px!important;column-gap:0!important;padding-left:10px!important;padding-right:10px!important}
+ .concourse .head,.concourse .train{grid-template-columns:90px 112px 90px 190px 80px 80px 390px 100px!important;column-gap:4px!important;padding-left:8px!important;padding-right:8px!important}
+}
+
+
+
+/* V21: stop-diagram alignment + orientation parity + 3-row platform board.
+   Persistent storage key/schema are intentionally unchanged. */
+.badge{border-radius:7px!important}
+
+/* Concourse stop diagram: all station names start from the same top edge,
+   use the full row height, and the line ends at the terminal marker. */
+.concourse .stops{
+  --diagram-width:100%;
+  width:var(--diagram-width)!important;
+  max-width:100%!important;
+  height:64px!important;
+  padding:3px 0 10px!important;
+  align-items:start!important;
+  justify-items:stretch!important;
+  overflow:hidden!important;
+}
+.concourse .stops.fewStops{
+  --diagram-width:min(100%,calc(var(--stop-count) * 78px));
+  grid-template-columns:repeat(var(--stop-count),minmax(54px,1fr))!important;
+  column-gap:8px!important;
+  justify-content:start!important;
+}
+.concourse .stops::before{
+  left:calc(50% / var(--stop-count))!important;
+  right:calc(50% / var(--stop-count))!important;
+  bottom:7px!important;
+}
+.concourse .stop{
+  height:53px!important;
+  padding:2px 1px 10px!important;
+  font-size:clamp(8px,.76vw,12px)!important;
+  line-height:1.05!important;
+  justify-content:flex-start!important;
+  align-items:center!important;
+  overflow:visible!important;
+}
+.concourse .stop::before{bottom:4px!important;width:7px!important;height:7px!important}
+
+/* One geometry for portrait and landscape. Portrait simply exposes the same
+   wide board through a horizontally scrollable viewport. */
+.display{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important}
+.concourse{min-width:1180px!important;width:max(1180px,100%)!important}
+.platform{min-width:1180px!important;width:max(1180px,100%)!important}
+.concourse .panel{min-width:1180px!important;width:100%!important}
+.platform{grid-template-columns:240px minmax(940px,1fr)!important}
+.platformRight,.platformRight>div{min-width:940px!important;width:100%!important;max-width:none!important;overflow:hidden!important}
+.platformRight .head,.platformRight .train{
+  grid-template-columns:150px 145px 125px minmax(300px,1fr) 110px 110px!important;
+  column-gap:8px!important;
+  padding:0 12px!important;
+}
+.platformRight .head{height:30px!important;font-size:12px!important}
+.platformRight .train{min-height:106px!important;height:106px!important;padding:6px 0!important}
+.platformRight .time{font-size:44px!important;line-height:1!important;white-space:nowrap!important}
+.platformRight .badge{font-size:20px!important;padding:7px 10px!important;max-width:130px!important}
+.platformRight .origin{font-size:15px!important;white-space:nowrap!important}
+.platformRight .dest{font-size:34px!important;line-height:1!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.platformRight .dest small{font-size:15px!important;margin-top:5px!important}
+.platformRight .meta{font-size:21px!important;font-weight:800!important;white-space:nowrap!important;overflow:visible!important}
+.currentInline{display:block;margin-top:5px;font-size:12px!important;color:#7fc3ff;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.platformNoticeStrip{grid-column:1/-1;height:46px!important;min-height:46px!important;border-top:1px solid #3b4147;overflow:hidden;background:#090909}
+.platformNoticeStrip .notice{height:46px!important;font-size:18px!important}
+.platformNoticeStrip.arrival{display:flex;align-items:center;justify-content:center;color:#ff5b18;font-size:25px!important;font-weight:900;background:#090909}
+
+/* Keep all three trains visible; the notice is a separate narrow strip. */
+.platformRight>div{display:grid!important;grid-template-rows:30px repeat(3,106px) 46px!important}
+
+/* Landscape concourse: compact enough that the notice remains visible and
+   sticky at the bottom of the board viewport. */
+@media (orientation:landscape){
+  .concourse .panel>.notice{position:sticky!important;bottom:0!important;z-index:8!important;height:40px!important;flex:0 0 40px!important}
+  .concourse .train{min-height:72px!important;height:72px!important;padding-top:2px!important;padding-bottom:2px!important}
+  .concourse .stops{height:60px!important}
+  .concourse .stop{height:50px!important;font-size:clamp(8px,.66vw,11px)!important}
+}
+
+@media (orientation:portrait){
+  html,body{overflow-x:hidden!important}
+  .app{min-width:0!important;width:100%!important}
+  .bar{width:100vw!important;min-width:0!important}
+  .display{width:100vw!important;overflow-x:auto!important}
+  .concourse,.platform{min-width:1180px!important;width:1180px!important}
+  .concourse .panel{min-width:1180px!important;width:1180px!important}
+  .platform{grid-template-columns:240px 940px!important}
+  .platformRight,.platformRight>div{min-width:940px!important;width:940px!important}
+  .platformInfo .routeName{font-size:22px!important}
+  .platformNo{font-size:96px!important}
+  .direction{font-size:18px!important}
+}
+
+
+
+/* V22: identical portrait/landscape geometry + centered pinch zoom + approach position row. */
+html,body,.app{min-width:0!important;max-width:none!important}
+body{overflow:auto!important}
+.display{
+  width:100%!important;
+  overflow:auto!important;
+  -webkit-overflow-scrolling:touch!important;
+  touch-action:pan-x pan-y pinch-zoom!important;
+  overscroll-behavior:auto!important;
+}
+.display>.panel,.concourse,.platform{transform:none!important;zoom:1!important;transform-origin:0 0!important}
+
+/* Never change the board typography/geometry just because the phone rotates. */
+.concourse{width:1180px!important;min-width:1180px!important;max-width:1180px!important}
+.concourse .panel{width:1180px!important;min-width:1180px!important;max-width:1180px!important}
+.platform{width:1180px!important;min-width:1180px!important;max-width:1180px!important;grid-template-columns:240px 940px!important}
+.platformRight{width:940px!important;min-width:940px!important;max-width:940px!important;overflow:hidden!important}
+.platformRight>div{width:940px!important;min-width:940px!important;max-width:940px!important;display:grid!important;grid-template-rows:30px repeat(3,106px) 46px!important}
+.platformRight .head,.platformRight .train{
+  width:940px!important;
+  grid-template-columns:150px 145px 125px 300px 110px 110px!important;
+  column-gap:0!important;
+  padding:0 10px!important;
+}
+.platformRight .head{height:30px!important;font-size:12px!important}
+.platformRight .train{height:106px!important;min-height:106px!important;padding:6px 0!important}
+.platformRight .time{font-size:44px!important;line-height:1!important;white-space:nowrap!important}
+.platformRight .badge{font-size:20px!important;padding:7px 10px!important;border-radius:7px!important}
+.platformRight .origin{font-size:15px!important;white-space:nowrap!important}
+.platformRight .dest{font-size:34px!important;line-height:1!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.platformRight .dest small{display:block!important;font-size:15px!important;margin:5px 0 0!important;line-height:1.05!important;color:#c7ccd1!important}
+.platformRight .meta{font-size:21px!important;white-space:nowrap!important}
+.platformInfo{width:240px!important;min-width:240px!important;max-width:240px!important}
+.platformInfo .routeName{font-size:22px!important}
+.platformNo{font-size:96px!important}
+.direction{font-size:18px!important}
+.badge{border-radius:7px!important}
+
+/* Concourse keeps exactly the same columns in both orientations. */
+.concourse .head,.concourse .train{
+  grid-template-columns:90px 112px 90px 190px 80px 80px 390px 100px!important;
+  column-gap:4px!important;padding-left:8px!important;padding-right:8px!important
+}
+.concourse .train{height:72px!important;min-height:72px!important;padding-top:2px!important;padding-bottom:2px!important}
+.concourse .panel>.notice{height:40px!important;min-height:40px!important;position:relative!important;bottom:auto!important}
+
+/* Reference-style approach diagram displayed in the second platform row. */
+.positionApproach{
+  width:940px!important;height:106px!important;min-height:106px!important;
+  grid-column:1/-1!important;
+  display:grid!important;
+  grid-template-columns:150px 145px 125px 300px 110px 110px!important;
+  align-items:center!important;
+  padding:4px 10px!important;
+  border-bottom:1px solid #3b4147!important;
+  background:linear-gradient(90deg,#090c10,#07090b)!important;
+  overflow:hidden!important;
+}
+.positionApproachLabel{grid-column:1/3;color:#aeb9c4;font-size:13px;font-weight:800;padding-left:6px;align-self:start;margin-top:7px}
+.approachDiagram{grid-column:2/7;position:relative;height:66px;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(105px,1fr);align-items:end;gap:10px;padding:8px 12px 7px;overflow:hidden}
+.approachDiagram:before{content:"";position:absolute;left:42px;right:42px;bottom:20px;height:3px;background:var(--line,#2680d9);box-shadow:0 0 8px color-mix(in srgb,var(--line,#2680d9) 55%,transparent)}
+.approachStop{position:relative;z-index:1;display:flex;justify-content:center;align-items:flex-end;height:54px;min-width:0}
+.approachStop:before{content:"";position:absolute;left:50%;bottom:15px;width:8px;height:8px;border-radius:50%;transform:translateX(-50%);background:var(--line,#2680d9);border:2px solid #dfe9f4;box-sizing:border-box}
+.approachStopName{position:absolute;bottom:29px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:15px;font-weight:800;color:#fff;text-shadow:0 1px 2px #000}
+.approachStop.current .approachStopName{background:#cf3b4b;border-radius:4px;padding:4px 11px;font-size:17px}
+.approachStop.current:before{background:#cf3b4b;border-color:#fff;width:10px;height:10px;bottom:14px}
+.approachStop.current:after{content:"現在位置";position:absolute;bottom:0;left:50%;transform:translateX(-50%);font-size:10px;color:#ff9da7;white-space:nowrap;font-weight:800}
+
+/* The board is wide in portrait too; the viewport scrolls horizontally instead of reflowing. */
+@media (orientation:portrait), (orientation:landscape){
+  .display{overflow:auto!important}
+  .concourse,.concourse .panel,.platform{width:1180px!important;min-width:1180px!important;max-width:1180px!important}
+  .platform{grid-template-columns:240px 940px!important}
+  .platformRight,.platformRight>div{width:940px!important;min-width:940px!important;max-width:940px!important}
+}
+
+
+/* Per-train through-service destination shown below service type. */
+.serviceCell{min-width:0;overflow:hidden;text-align:center}
+.trainThrough{display:block;margin-top:4px;font-size:11px;line-height:1.1;color:#8fd0ff;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.platformRight .trainThrough{font-size:13px}
+</style></head><body><div class="app"><div class="bar"><b class="barTitle">発車標システム</b><div class="barActions"><button class="btn" id="modeBtn" type="button">表示切替</button><button class="btn" id="settingsBtn" type="button">⚙︎ 設定</button></div><span class="clock" id="clock"></span></div><main class="display" id="display"></main></div>
+<section class="settings" id="settings"><div class="settingsTop"><button id="saveBtn">保存して戻る</button><button class="secondary" id="cancelBtn">キャンセル</button><span class="saveNote">駅を切り替えても各駅の編集内容は個別保存されます</span></div><div class="tabs"><button class="tab" data-tab="select">駅・路線・番線</button><button class="tab secondary" data-tab="edit">基本情報</button><button class="tab secondary" data-tab="types">種別</button><button class="tab secondary" data-tab="timetable">時刻表</button><button class="tab secondary" data-tab="patterns">時間帯パターン</button><button class="tab secondary" data-tab="stops">停車駅・現在位置</button><button class="tab secondary" data-tab="notice">お知らせ</button><button class="tab secondary" data-tab="backup">バックアップ</button></div><div id="settingsBody"></div></section>
+<script>
+const seed={selected:{station:'上野駅',route:'東海道線',platform:'2'},mode:'platform',settings:{platformStopEvery:12,platformNoticeEvery:30,platformNoticeDuration:8,arrivalSec:105,stoppedSec:50,departingSec:15,currentMode:'time',currentMinutes:3,currentStations:2,currentAlternateSec:5},stations:{'上野駅':{code:'UEN',routes:{'東海道線':{code:'JU',name:'東海道線（上野東京ライン）',nameEn:'Tokaido Line (Ueno-Tokyo Line)',direction:'東京・品川方面',directionEn:'for Tokyo & Shinagawa',through:'宇都宮・高崎・常磐線',lineColor:'#e87518',platforms:['2','3'],types:{'各駅停車':{ja:'各駅停車',en:'Local',bg:'#18894c',fg:'#fff'},'快速':{ja:'快速',en:'Rapid',bg:'#176bc1',fg:'#fff'},'特急':{ja:'特急',en:'Limited Exp.',bg:'#bd2057',fg:'#fff'}},stops:['上野','尾久','赤羽','浦和','大宮','上尾','桶川','北本','鴻巣','熊谷','籠原','本庄','高崎'],trains:[{time:'14:55',type:'快速',origin:true,dest:'籠原',destEn:'Kagohara',cars:'10',platform:'2',stops:['上野','尾久','赤羽','浦和','大宮','上尾','桶川','北本','鴻巣','熊谷','籠原']},{time:'15:00',type:'各駅停車',origin:false,dest:'土浦',destEn:'Tsuchiura',cars:'15',platform:'2',stops:['上野','尾久','赤羽','浦和','大宮','北千住','松戸','柏','我孫子','取手','牛久','土浦']},{time:'15:05',type:'特急',origin:true,dest:'宇都宮',destEn:'Utsunomiya',cars:'10',platform:'3',stops:['上野','大宮','小山','宇都宮']},{time:'15:12',type:'各駅停車',origin:false,dest:'桐生',destEn:'Kiryu',cars:'15',platform:'2',stops:['上野','尾久','赤羽','浦和','大宮','上尾','桶川','北本','鴻巣','熊谷','高崎','桐生']},{time:'15:20',type:'快速',origin:false,dest:'新前橋',destEn:'Shin-Maebashi',cars:'10',platform:'3',stops:['上野','尾久','赤羽','浦和','大宮','上尾','桶川','北本','鴻巣','熊谷','本庄','新前橋']},{time:'15:27',type:'各駅停車',origin:false,dest:'小金井',destEn:'Koganei',cars:'15',platform:'2',stops:['上野','尾久','赤羽','浦和','大宮','小山','小金井']},{time:'15:35',type:'特急',origin:false,dest:'高崎',destEn:'Takasaki',cars:'10',platform:'4',stops:['上野','大宮','熊谷','本庄','高崎']}]}}}},notices:['【お知らせ】 車内で不審物を見かけた際は、係員までお知らせください。']};
+/* IMPORTANT: keep this key stable so existing user data survives HTML updates. */
+const KEY='fictionRailwayBoardV6';const LEGACY_KEYS=['fictionRailwayBoardV5','fictionRailwayBoardV4','fictionRailwayBoardV3','fictionRailwayBoardV2','fictionRailwayBoard'];
+function safeParse(v){try{return JSON.parse(v)}catch(e){return null}}
+function normalizeData(x){if(!x||typeof x!=='object')return null;if(!x.stations)return null;x.settings=Object.assign({},seed.settings,x.settings||{});x.notices=Array.isArray(x.notices)?x.notices:clone(seed.notices);x.mode=x.mode||'platform';for(const sn of Object.keys(x.stations||{})){const st=x.stations[sn];st.routes=st.routes||{};for(const rn of Object.keys(st.routes)){const r=st.routes[rn];r.platforms=Array.isArray(r.platforms)&&r.platforms.length?r.platforms:['1'];r.types=r.types||clone(seed.stations['上野駅'].routes['東海道線'].types);r.trains=Array.isArray(r.trains)?r.trains:[];ensurePatterns(r)}}if(!x.selected||!x.stations[x.selected.station]){const sn=Object.keys(x.stations)[0];if(!sn)return null;const rn=Object.keys(x.stations[sn].routes)[0];x.selected={station:sn,route:rn,platform:x.stations[sn].routes[rn].platforms[0]}}else{const st=x.stations[x.selected.station];if(!st.routes[x.selected.route])x.selected.route=Object.keys(st.routes)[0];const r=st.routes[x.selected.route];if(!r.platforms.includes(String(x.selected.platform)))x.selected.platform=r.platforms[0]}return x}
+function loadData(){let cur=normalizeData(safeParse(localStorage.getItem(KEY)));if(cur)return cur;for(const k of LEGACY_KEYS){const old=normalizeData(safeParse(localStorage.getItem(k)));if(old){localStorage.setItem(KEY,JSON.stringify(old));localStorage.setItem(KEY+'_migration_source',k);return old}}return clone(seed)}
+let data=loadData();let draft=null,tab='select';const $=x=>document.getElementById(x),esc=(s='')=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function clone(x){return JSON.parse(JSON.stringify(x))}const SUPABASE_URL='https://wybxxpmrahqsfizjiqxc.supabase.co';
+const SUPABASE_KEY='sb_publishable_IsOCFCWAYukonu65UFepNQ_1KwL4LLj';
+const CLOUD_ROW_ID='fictional-railway-main';
+let cloudReady=false,cloudApplying=false,cloudTimer=null;
+function cloudHeaders(extra={}){return Object.assign({'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Content-Type':'application/json'},extra)}
+async function cloudUpload(){
+  if(!cloudReady||cloudApplying)return;
+  try{
+    const res=await fetch(SUPABASE_URL+'/rest/v1/railway_app_data?on_conflict=id',{method:'POST',headers:cloudHeaders({'Prefer':'resolution=merge-duplicates,return=minimal'}),body:JSON.stringify({id:CLOUD_ROW_ID,data:data,updated_at:new Date().toISOString()})});
+    if(!res.ok)throw new Error(await res.text());
+    localStorage.setItem(KEY+'_cloudSavedAt',new Date().toISOString());
+  }catch(e){console.error('Cloud save failed',e)}
+}
+function queueCloudUpload(){clearTimeout(cloudTimer);cloudTimer=setTimeout(cloudUpload,500)}
+function persist(){const raw=JSON.stringify(data),savedAt=new Date().toISOString();localStorage.setItem(KEY,raw);localStorage.setItem(KEY+'_autosave',raw);localStorage.setItem(KEY+'_savedAt',savedAt);queueCloudUpload()}
+async function initCloudStorage(){
+  try{
+    const res=await fetch(SUPABASE_URL+'/rest/v1/railway_app_data?id=eq.'+encodeURIComponent(CLOUD_ROW_ID)+'&select=data,updated_at',{headers:cloudHeaders()});
+    if(!res.ok)throw new Error(await res.text());
+    const rows=await res.json();
+    const localRaw=localStorage.getItem(KEY),localSaved=localStorage.getItem(KEY+'_savedAt');
+    if(rows.length){
+      const cloud=normalizeData(rows[0].data),cloudTime=Date.parse(rows[0].updated_at||0)||0,localTime=Date.parse(localSaved||0)||0;
+      if(localRaw&&localTime>cloudTime){cloudReady=true;await cloudUpload()}
+      else if(cloud){cloudApplying=true;data=cloud;const raw=JSON.stringify(data);localStorage.setItem(KEY,raw);localStorage.setItem(KEY+'_autosave',raw);localStorage.setItem(KEY+'_savedAt',rows[0].updated_at||new Date().toISOString());cloudApplying=false;cloudReady=true;try{lastRenderKey='';render()}catch(_e){}}
+      else cloudReady=true;
+    }else{
+      cloudReady=true;
+      await cloudUpload();
+    }
+  }catch(e){cloudReady=false;console.error('Cloud load failed; using local storage',e)}
+}
+setTimeout(initCloudStorage,0);function route(d=data){let s=d.stations[d.selected.station];return s?.routes[d.selected.route]}function secs(t){let p=String(t).trim().split(':').map(Number);if(p.length===1)return p[0]*60;return p[0]*3600+p[1]*60}function delta(t){let n=new Date(),d=secs(t)-(n.getHours()*3600+n.getMinutes()*60+n.getSeconds());if(d<-43200)d+=86400;if(d>43200)d-=86400;return d}function ensurePatterns(r){if(!r.patterns){r.patterns={'基本':clone(r.trains||[])};r.hourAssignments={};for(let h=0;h<24;h++)r.hourAssignments[h]='基本'}if(!r.hourAssignments)r.hourAssignments={};let first=Object.keys(r.patterns)[0]||'基本';for(let h=0;h<24;h++)if(!r.hourAssignments[h])r.hourAssignments[h]=first;if(!r.activePattern||!r.patterns[r.activePattern])r.activePattern=first}
+function generatedTrains(r){ensurePatterns(r);let now=new Date(),out=[];for(let off=-1;off<=2;off++){let d=new Date(now);d.setMinutes(0,0,0);d.setHours(d.getHours()+off);let h=d.getHours(),pat=r.hourAssignments[h],arr=r.patterns[pat]||[];for(let t of arr){let raw=String(t.time||'').trim(),hh,mm;if(raw.includes(':')){[hh,mm]=raw.split(':').map(Number)}else{hh=h;mm=Number(raw)}if(!Number.isFinite(mm))continue;let dep=new Date(d);dep.setHours(hh,mm,0,0);if(!raw.includes(':'))dep.setHours(h,mm,0,0);let c=clone(t);c._dep=dep.getTime();c.time=String(dep.getHours()).padStart(2,'0')+':'+String(dep.getMinutes()).padStart(2,'0');out.push(c)}}return out.sort((a,b)=>a._dep-b._dep)}
+function trainDelta(t){if(t._dep)return (t._dep-Date.now())/1000;return delta(t.time)}
+function upcoming(r){let src=(r.patterns?generatedTrains(r):(r.trains||[]).map(x=>clone(x)));return src.sort((a,b)=>trainDelta(a)-trainDelta(b)).filter(t=>trainDelta(t)>-30)}function status(t){let d=trainDelta(t),s=data.settings;if(d<=s.departingSec&&d>=0)return'まもなく発車';if(d<=s.stoppedSec&&d>=0)return'停車中';if(d<=s.arrivalSec&&d>=0)return'まもなく到着';return''}function currentIndex(t){let st=t.stops||[],s=data.settings;if(!st.length)return-1;if(s.currentMode==='stations')return Math.max(0,st.length-1-s.currentStations);let d=Math.max(0,trainDelta(t));let mins=d/60;let back=Math.ceil(mins/Math.max(.1,s.currentMinutes));return Math.max(0,st.length-1-back)}function stopsHtml(t,showCurrent=true){let tp=route().types[t.type]||{bg:'#2680d9'},idx=currentIndex(t),phase=Math.floor(Date.now()/1000/data.settings.currentAlternateSec)%2,st=t.stops||[],n=Math.max(1,st.length);return`<div class="stops ${n<=7?'fewStops':'manyStops'}" data-count="${n}" style="--svc:${esc(tp.bg)};--stop-count:${n}">${st.map((x,i)=>`<span class="stop ${showCurrent&&phase&&i===idx?'current':''}"><span class="stopLabel">${esc(x)}</span></span>`).join('')}</div>`}function currentLocationHtml(t){let st=t.stops||[],idx=currentIndex(t);if(!st.length||idx<0)return`<div class="platformAlt currentPositionPanel"><span class="currentPositionLabel">現在位置</span><span class="currentPositionStation">情報なし</span></div>`;idx=Math.min(idx,st.length-1);let here=st[idx]||'',next=st[Math.min(idx+1,st.length-1)]||'';let moving=next&&next!==here;return`<div class="platformAlt currentPositionPanel"><span class="currentPositionLabel">現在位置</span><div class="currentPositionMain"><span class="currentPositionStation">${esc(here)}</span>${moving?`<span class="currentPositionArrow">→</span><span class="currentPositionNext">${esc(next)}方面</span>`:''}</div><span class="currentPositionNote">次発列車</span></div>`}function approachPositionHtml(t){
+  let st=t.stops||[],idx=currentIndex(t);if(!st.length||idx<0)return `<div class="positionApproach"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram"><span style="color:#9aa4ad">位置情報なし</span></div></div>`;
+  idx=Math.min(idx,st.length-1);
+  let start=Math.max(0,idx-3), view=st.slice(start,idx+1);
+  if(view.length<4 && idx+1<st.length){view=view.concat(st.slice(idx+1,Math.min(st.length,idx+1+(4-view.length))))}
+  return `<div class="positionApproach" style="--line:${esc(route().lineColor||'#2680d9')}"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram">${view.map((name,j)=>{let real=start+j;return `<span class="approachStop ${real===idx?'current':''}"><span class="approachStopName">${esc(name)}</span></span>`}).join('')}</div></div>`
+}
+function badge(t){let tp=route().types[t.type]||{ja:t.type,en:t.type,bg:'#555',fg:'#fff'};return`<span class="badge" style="background:${tp.bg};color:${tp.fg}">${esc(tp.ja)}</span>`}function serviceHtml(t){return `<div class="serviceCell">${badge(t)}${t.through?`<span class="trainThrough">${esc(t.through)}直通</span>`:''}</div>`}function noticeHtml(customText=null,label='【お知らせ】'){
+  let source=customText==null?String(data.notices[0]||''):String(customText||'');
+  let txt=source.replace(/^【お知らせ】\s*/, '');
+  return `<div class="notice"><div class="noticeWindow"><span class="noticeTrack"><b>${esc(label)}</b> ${esc(txt)}</span></div></div>`
+}
+function render(){
+  let r=route();if(!r)return;
+  let list=upcoming(r),mode=data.mode;
+  if(mode==='concourse'){
+    let rows=list.slice(0,6).map(t=>`<div class="train"><div class="time">${t.time}</div>${serviceHtml(t)}<div class="origin">${t.origin?'当駅始発':''}</div><div class="dest">${esc(t.dest)}<small>${esc(t.destEn)}</small></div><div class="meta">${esc(t.cars)}両</div><div class="meta">${esc(t.platform)}番線</div><div>${stopsHtml(t,true)}</div><div class="status">${status(t)}</div></div>`).join('');
+    $('display').innerHTML=`<div class="concourse"><div class="panel"><div class="routeHead" style="--line:${r.lineColor}"><div class="code">${esc(r.code)}</div><div><div class="routeName">${esc(r.name)}</div><div class="sub">${esc(r.nameEn)}</div></div></div><div class="head"><div>時刻</div><div>種別</div><div>始発</div><div>行き先</div><div>両数</div><div>番線</div><div>停車駅一覧</div><div>案内</div></div>${rows}${noticeHtml()}</div></div>`;
+  }else{
+    let pl=data.selected.platform,fl=list.filter(t=>String(t.platform)===String(pl)).slice(0,3);
+    let cycle=Math.floor(Date.now()/1000),showPosition=fl[0]&&cycle%(Math.max(1,data.settings.platformStopEvery)+8)<8;
+    let showNotice=cycle%Math.max(1,data.settings.platformNoticeEvery)<data.settings.platformNoticeDuration;
+    let firstStatus=fl[0]?status(fl[0]):'',arrival=fl[0]&&trainDelta(fl[0])<=data.settings.arrivalSec&&trainDelta(fl[0])>0;
+    let row=(t)=>`<div class="train"><div class="time">${t.time}</div>${serviceHtml(t)}<div class="origin">${t.origin?'当駅始発':''}</div><div class="dest">${esc(t.dest)}<small>${esc(t.destEn)}</small></div><div class="meta">${esc(t.cars)}両</div><div class="meta">${esc(t.platform)}番線</div></div>`;
+    let body='';
+    if(showPosition&&fl[0]){
+      body+=row(fl[0]);
+      body+=approachPositionHtml(fl[0]);
+      body+=fl[1]?row(fl[1]):`<div class="train"></div>`;
+    }else{
+      for(let i=0;i<3;i++) body+=fl[i]?row(fl[i]):`<div class="train"></div>`;
+    }
+    let strip='';
+    if(arrival&&firstStatus!=='停車中') strip=`<div class="platformNoticeStrip arrival">まもなく電車がまいります</div>`;
+    else if(firstStatus==='停車中'&&fl[0]){let stopNames=(fl[0].stops||[]).slice(1);let msg=`この電車は${stopNames.length?stopNames.join('、'):'各駅'}に止まります。`;strip=`<div class="platformNoticeStrip">${noticeHtml(msg,'【停車駅】')}</div>`}
+    else if(showNotice) strip=`<div class="platformNoticeStrip">${noticeHtml()}</div>`;
+    else strip=`<div class="platformNoticeStrip"></div>`;
+    $('display').innerHTML=`<div class="platform panel" style="--line:${r.lineColor}"><aside class="platformInfo"><div class="routeName">${esc(r.name)}</div><div class="sub">${esc(r.nameEn)}</div><div class="platformNo">${esc(pl)}</div><div class="direction">${esc(r.direction)}</div><div class="sub">${esc(r.directionEn)}</div><div class="sub through" style="margin-top:5px">直通先：${esc(r.through)}</div><div class="codes"><span class="miniCode">${esc(r.code)}</span></div></aside><section class="platformRight"><div><div class="head"><div>時刻</div><div>種別</div><div>始発</div><div>行き先</div><div>両数</div><div>番線</div></div>${body}${strip}</div></section></div>`;
+  }
+}
+function settingsRender(){
+  if(!draft) draft=clone(data);
+  const body=$('settingsBody'); const r=route(draft); const st=draft.stations[draft.selected.station];
+  const stationOpts=Object.keys(draft.stations).map(x=>`<option ${x===draft.selected.station?'selected':''}>${esc(x)}</option>`).join('');
+  const routeOpts=Object.keys(st.routes).map(x=>`<option ${x===draft.selected.route?'selected':''}>${esc(x)}</option>`).join('');
+  const platformOpts=(r.platforms||[]).map(x=>`<option ${String(x)===String(draft.selected.platform)?'selected':''}>${esc(x)}</option>`).join('');
+  if(tab==='select') body.innerHTML=`<div class="card"><h2>表示する駅・路線・番線</h2><div class="field"><label>駅</label><select id="selStation">${stationOpts}</select></div><div class="field"><label>路線</label><select id="selRoute">${routeOpts}</select></div><div class="field"><label>ホーム番線</label><select id="selPlatform">${platformOpts}</select></div><div class="two"><button id="addStation">＋ 駅を追加</button><button id="addRoute">＋ この駅に路線を追加</button></div></div>`;
+  else if(tab==='edit') body.innerHTML=`<div class="card"><h2>基本情報</h2><div class="two"><div class="field"><label>路線名</label><input id="eName" value="${esc(r.name)}"></div><div class="field"><label>英語路線名</label><input id="eNameEn" value="${esc(r.nameEn)}"></div><div class="field"><label>ナンバリング</label><input id="eCode" value="${esc(r.code)}"></div><div class="field"><label>路線カラー</label><input id="eColor" type="color" value="${esc(r.lineColor||'#1687d9')}"></div><div class="field"><label>方面</label><input id="eDirection" value="${esc(r.direction||'')}"></div><div class="field"><label>英語方面</label><input id="eDirectionEn" value="${esc(r.directionEn||'')}"></div></div><div class="field"><label>直通先</label><input id="eThrough" value="${esc(r.through||'')}"></div><div class="field"><label>番線（カンマ区切り）</label><input id="ePlatforms" value="${esc((r.platforms||[]).join(','))}"></div></div>`;
+  else if(tab==='types') body.innerHTML=`<div class="card"><h2>種別テンプレート</h2><div id="typeRows">${Object.entries(r.types||{}).map(([k,v])=>`<div class="rowEdit"><div class="field"><label>日本語</label><input class="typeJa" data-old="${esc(k)}" value="${esc(v.ja||k)}"></div><div class="field"><label>英語</label><input class="typeEn" value="${esc(v.en||'')}"></div><input class="typeBg" type="color" value="${esc(v.bg||'#555555')}"></div>`).join('')}</div><button id="addType">＋ 種別を追加</button></div>`;
+  else if(tab==='timetable'){ensurePatterns(r); let pat=r.activePattern||Object.keys(r.patterns)[0]; let txt=(r.patterns[pat]||[]).map(t=>[t.time,t.type,t.origin?1:0,t.dest,t.destEn||'',t.cars||'',t.platform||'',(t.stops||[]).join(','),t.through||''].join('|')).join('\n'); body.innerHTML=`<div class="card"><h2>時刻表</h2><div class="field"><label>編集するパターン</label><select id="activePattern">${Object.keys(r.patterns).map(x=>`<option ${x===pat?'selected':''}>${esc(x)}</option>`).join('')}</select></div><div class="field"><label>時刻|種別|当駅始発(1/0)|行先|英語行先|両数|番線|停車駅(,区切り)|直通先</label><textarea id="ttText">${esc(txt)}</textarea></div></div>`}
+  else if(tab==='patterns'){ensurePatterns(r); body.innerHTML=`<div class="card"><h2>時間帯パターン</h2><div class="field"><label>パターン名（カンマ区切り）</label><input id="patternNames" value="${esc(Object.keys(r.patterns).join(','))}"></div><div class="hourGrid">${Array.from({length:24},(_,h)=>`<div class="hourCell"><b>${h}時</b><select data-hour="${h}">${Object.keys(r.patterns).map(x=>`<option ${r.hourAssignments[h]===x?'selected':''}>${esc(x)}</option>`).join('')}</select></div>`).join('')}</div></div>`}
+  else if(tab==='stops') body.innerHTML=`<div class="card"><h2>停車駅・現在位置</h2><div class="field"><label>路線の駅一覧（カンマ区切り）</label><textarea id="routeStops">${esc((r.stops||[]).join(','))}</textarea></div><div class="three"><div class="field"><label>現在位置：何分で1駅</label><input id="curMin" type="number" step="0.1" value="${draft.settings.currentMinutes}"></div><div class="field"><label>終点の何駅前</label><input id="curStations" type="number" value="${draft.settings.currentStations}"></div><div class="field"><label>交互表示秒数</label><input id="curAlt" type="number" value="${draft.settings.currentAlternateSec}"></div></div></div>`;
+  else if(tab==='notice') body.innerHTML=`<div class="card"><h2>お知らせ</h2><div class="field"><label>お知らせ（1行1件）</label><textarea id="noticeText">${esc((draft.notices||[]).join('\n'))}</textarea></div><div class="three"><div class="field"><label>ホーム表示周期(秒)</label><input id="noticeEvery" type="number" value="${draft.settings.platformNoticeEvery}"></div><div class="field"><label>表示時間(秒)</label><input id="noticeDuration" type="number" value="${draft.settings.platformNoticeDuration}"></div><div class="field"><label>現在位置表示周期(秒)</label><input id="stopEvery" type="number" value="${draft.settings.platformStopEvery}"></div></div></div>`;
+  else if(tab==='backup') body.innerHTML=`<div class="card"><h2>バックアップ</h2><div class="field"><label>JSON</label><textarea id="backupText">${esc(JSON.stringify(draft,null,2))}</textarea></div><button id="restoreBackup">このJSONから復元</button></div>`;
+  bindSettingsControls();
+}
+function parseTimetable(txt){return String(txt||'').split(/\n+/).map(x=>x.trim()).filter(Boolean).map(line=>{let a=line.split('|');return {time:(a[0]||'').trim(),type:(a[1]||'').trim(),origin:String(a[2]||'0').trim()==='1',dest:(a[3]||'').trim(),destEn:(a[4]||'').trim(),cars:(a[5]||'').trim(),platform:(a[6]||'').trim(),stops:(a[7]||'').split(',').map(x=>x.trim()).filter(Boolean),through:(a[8]||'').trim()}})}
+function pullTab(){if(!draft)return;const r=route(draft); if(tab==='select'){let a=$('selStation'),b=$('selRoute'),c=$('selPlatform');if(a)draft.selected.station=a.value;if(b&&draft.stations[draft.selected.station]?.routes[b.value])draft.selected.route=b.value;if(c)draft.selected.platform=c.value}
+ else if(tab==='edit'&&$('eName')){r.name=$('eName').value;r.nameEn=$('eNameEn').value;r.code=$('eCode').value;r.lineColor=$('eColor').value;r.direction=$('eDirection').value;r.directionEn=$('eDirectionEn').value;r.through=$('eThrough').value;r.platforms=$('ePlatforms').value.split(',').map(x=>x.trim()).filter(Boolean);if(!r.platforms.includes(String(draft.selected.platform)))draft.selected.platform=r.platforms[0]||'1'}
+ else if(tab==='types'&&document.querySelector('.typeJa')){let n={};document.querySelectorAll('.typeJa').forEach((el,i)=>{let ja=el.value.trim();if(ja)n[ja]={ja,en:document.querySelectorAll('.typeEn')[i].value,bg:document.querySelectorAll('.typeBg')[i].value,fg:'#fff'}});r.types=n}
+ else if(tab==='timetable'&&$('ttText')){ensurePatterns(r);let p=$('activePattern').value;r.activePattern=p;r.patterns[p]=parseTimetable($('ttText').value)}
+ else if(tab==='patterns'&&$('patternNames')){ensurePatterns(r);let names=$('patternNames').value.split(',').map(x=>x.trim()).filter(Boolean);let np={};names.forEach(n=>np[n]=r.patterns[n]||[]);if(!names.length){names=['基本'];np['基本']=[]}r.patterns=np;document.querySelectorAll('[data-hour]').forEach(x=>r.hourAssignments[x.dataset.hour]=names.includes(x.value)?x.value:names[0]);r.activePattern=names.includes(r.activePattern)?r.activePattern:names[0]}
+ else if(tab==='stops'&&$('routeStops')){r.stops=$('routeStops').value.split(',').map(x=>x.trim()).filter(Boolean);draft.settings.currentMinutes=+$('curMin').value||3;draft.settings.currentStations=+$('curStations').value||2;draft.settings.currentAlternateSec=+$('curAlt').value||5}
+ else if(tab==='notice'&&$('noticeText')){draft.notices=$('noticeText').value.split(/\n+/).map(x=>x.trim()).filter(Boolean);draft.settings.platformNoticeEvery=+$('noticeEvery').value||30;draft.settings.platformNoticeDuration=+$('noticeDuration').value||8;draft.settings.platformStopEvery=+$('stopEvery').value||12}}
+function bindSettingsControls(){
+ const ss=$('selStation');if(ss)ss.onchange=()=>{draft.selected.station=ss.value;let st=draft.stations[ss.value];draft.selected.route=Object.keys(st.routes)[0];draft.selected.platform=st.routes[draft.selected.route].platforms[0];settingsRender()};
+ const sr=$('selRoute');if(sr)sr.onchange=()=>{draft.selected.route=sr.value;draft.selected.platform=route(draft).platforms[0];settingsRender()}; const sp=$('selPlatform');if(sp)sp.onchange=()=>draft.selected.platform=sp.value;
+ const as=$('addStation');if(as)as.onclick=()=>{let n=prompt('駅名');if(!n||draft.stations[n])return;draft.stations[n]={code:'',routes:{'新しい路線':clone(seed.stations['上野駅'].routes['東海道線'])}};draft.selected={station:n,route:'新しい路線',platform:'2'};settingsRender()};
+ const ar=$('addRoute');if(ar)ar.onclick=()=>{let n=prompt('路線名');if(!n||draft.stations[draft.selected.station].routes[n])return;draft.stations[draft.selected.station].routes[n]=clone(seed.stations['上野駅'].routes['東海道線']);draft.stations[draft.selected.station].routes[n].name=n;draft.selected.route=n;draft.selected.platform='2';settingsRender()};
+ const at=$('addType');if(at)at.onclick=()=>{pullTab();route(draft).types['新種別']={ja:'新種別',en:'Service',bg:'#555555',fg:'#fff'};settingsRender()};
+ const ap=$('activePattern');if(ap)ap.onchange=()=>{pullTab();route(draft).activePattern=ap.value;settingsRender()};
+ const rb=$('restoreBackup');if(rb)rb.onclick=()=>{let x=normalizeData(safeParse($('backupText').value));if(!x)return alert('JSONを読み取れませんでした');draft=x;tab='select';settingsRender();alert('読み込みました。「保存して戻る」で確定します。')};
+}
+function openSettings(){draft=clone(data);tab='select';settingsRender();$('settings').classList.add('open');document.body.style.overflow='hidden'}
+function closeSettings(){ $('settings').classList.remove('open');document.body.style.overflow=''}
+const bindSettingsButton=(el)=>{if(!el)return;el.addEventListener('click',(e)=>{e.preventDefault();e.stopPropagation();openSettings()},{passive:false})};bindSettingsButton($('settingsBtn'));
+$('cancelBtn').onclick=closeSettings;$('saveBtn').onclick=()=>{pullTab();data=draft;persist();lastRenderKey='';render();closeSettings()};
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{pullTab();tab=b.dataset.tab;document.querySelectorAll('.tab').forEach(x=>x.classList.add('secondary'));b.classList.remove('secondary');settingsRender()});
+$('modeBtn').onclick=()=>{data.mode=data.mode==='platform'?'concourse':'platform';persist();lastRenderKey='';render()};let lastRenderKey='';function refresh(){
+  let n=new Date();$('clock').textContent=n.toLocaleTimeString('ja-JP',{hour12:false});
+  let r=route();if(!r)return;
+  let u=upcoming(r),first=u[0],nowSec=Math.floor(Date.now()/1000),keyParts=[data.mode,data.selected.station,data.selected.route,data.selected.platform];
+  if(data.mode==='platform'){
+    let pl=data.selected.platform,fl=u.filter(t=>String(t.platform)===String(pl)).slice(0,3),f=fl[0];
+    let stopEvery=Math.max(1,data.settings.platformStopEvery),noticeEvery=Math.max(1,data.settings.platformNoticeEvery),noticeDur=Math.max(0,data.settings.platformNoticeDuration);
+    let showPosition=!!f && nowSec%(stopEvery+8)<8;
+    let showNotice=nowSec%noticeEvery<noticeDur;
+    let firstStatus=f?status(f):'';
+    let arrival=!!f&&trainDelta(f)<=data.settings.arrivalSec&&trainDelta(f)>0;
+    keyParts.push(...fl.map(t=>t?[t.time,t.type,t.dest,t.cars,t.platform,t.origin?1:0,t.through||''].join('~'):'-'));
+    keyParts.push(firstStatus,arrival?1:0,showPosition?1:0,showNotice?1:0,f?currentIndex(f):-1);
+  }else{
+    let six=u.slice(0,6);
+    keyParts.push(...six.map(t=>t?[t.time,t.type,t.dest,t.cars,t.platform,status(t),currentIndex(t),t.through||''].join('~'):'-'));
+    keyParts.push(Math.floor(nowSec/Math.max(1,data.settings.currentAlternateSec))%2);
+  }
+  let key=keyParts.join('|');
+  if(key!==lastRenderKey){lastRenderKey=key;render()}
+}setInterval(refresh,1000);refresh();
+</script>
+
+
+
+<style id="v25InteractionFixes">
+/* V25: continuous route line, stable marquee and true map-like board pinch zoom.
+   Persistent railway data/storage is intentionally unchanged. */
+
+/* Continuous stop line is drawn once by the container, never by an individual stop. */
+.stops{position:relative!important;overflow:hidden!important;isolation:isolate!important}
+.stops::before{display:none!important;content:none!important}
+.stops::after{
+  content:""!important;display:block!important;position:absolute!important;
+  height:3px!important;bottom:8px!important;z-index:0!important;
+  background:var(--svc,#2787dd)!important;border-radius:2px!important;
+  pointer-events:none!important;
+}
+.stops.manyStops::after{left:calc(50% / var(--stop-count))!important;right:calc(50% / var(--stop-count))!important}
+.stops.fewStops{width:max-content!important;max-width:100%!important;grid-template-columns:repeat(var(--stop-count),56px)!important;column-gap:24px!important;justify-content:start!important}
+.stops.fewStops::after{left:28px!important;right:28px!important}
+.stop{position:relative!important;z-index:1!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
+.stop::before{
+  content:""!important;display:block!important;position:absolute!important;
+  left:50%!important;bottom:3px!important;top:auto!important;transform:translateX(-50%)!important;
+  width:11px!important;height:11px!important;border-radius:50%!important;
+  border:2px solid #fff!important;background:var(--svc,#2787dd)!important;z-index:3!important;
+}
+.stop::after{display:none!important;content:none!important}
+.stopLabel{
+  position:absolute!important;left:50%!important;bottom:20px!important;transform:translateX(-50%)!important;
+  writing-mode:vertical-rl!important;text-orientation:upright!important;
+  margin:0!important;padding:0!important;text-align:center!important;line-height:1!important;
+  color:#fff!important;white-space:normal!important;z-index:2!important;
+}
+.stop.current{background:transparent!important;color:#ff5a43!important;text-shadow:none!important}
+.stop.current .stopLabel{color:#ff5a43!important;text-shadow:0 0 6px rgba(255,70,45,.7)!important}
+.stop.current::before{background:#ff3b30!important;border-color:#ffd1cc!important;box-shadow:0 0 8px #ff3b30!important}
+.concourse .stops{height:70px!important;padding-bottom:10px!important}
+.concourse .stop{height:60px!important}
+.concourse .stopLabel{font-size:clamp(9px,.9vw,13px)!important;bottom:22px!important}
+
+/* Reference-like current-position diagram: line remains behind the highlighted station. */
+.approachDiagram{position:relative!important;isolation:isolate!important}
+.approachDiagram::before{z-index:0!important}
+.approachStop{z-index:1!important}
+.approachStop.current::before{z-index:3!important}
+
+/* Service badge shape never changes with orientation. */
+.badge,.platformRight .badge{
+  border-radius:7px!important;clip-path:none!important;-webkit-clip-path:none!important;
+  transform:none!important;-webkit-transform:none!important;
+}
+
+/* Marquee is moved by JS only. It remains clipped under the red side masks. */
+.notice{overflow:hidden!important;contain:paint!important}
+.noticeWindow{overflow:hidden!important;clip-path:inset(0)!important}
+.noticeTrack{position:absolute!important;left:0!important;top:50%!important;animation:none!important;padding-left:0!important;min-width:max-content!important;white-space:nowrap!important;will-change:transform!important}
+
+/* Board-only map-like zoom. Header stays normal size. */
+.bar{transform:none!important;zoom:1!important}
+#display{
+  position:relative!important;overflow:auto!important;-webkit-overflow-scrolling:touch!important;
+  touch-action:none!important;overscroll-behavior:contain!important;
+}
+.zoomStage{position:relative!important;flex:0 0 auto!important;transform:none!important;zoom:1!important}
+.zoomStage>.concourse,.zoomStage>.platform{
+  position:absolute!important;left:0!important;top:0!important;margin:0!important;
+  transform-origin:0 0!important;will-change:transform!important;zoom:1!important;
+}
+/* Same natural board geometry in portrait and landscape; portrait is just a zoomed/pannable view. */
+@media (orientation:portrait),(orientation:landscape){
+  .zoomStage>.concourse,.zoomStage>.platform{width:1180px!important;min-width:1180px!important;max-width:1180px!important}
+  .zoomStage>.platform{grid-template-columns:240px 940px!important}
+  .zoomStage>.platform .platformRight,.zoomStage>.platform .platformRight>div{width:940px!important;min-width:940px!important;max-width:940px!important}
+}
+</style>
+
+<style id="v26BoardZoomFix">
+/* Fixed screen viewport. Only the physical departure board inside is scaled. */
+html,body{width:100%;min-height:100%;overflow:hidden!important}
+.app{height:100svh!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}
+.bar{flex:0 0 auto!important;position:relative!important;top:auto!important;transform:none!important;zoom:1!important}
+#display{
+  flex:1 1 auto!important;min-height:0!important;width:100%!important;height:auto!important;
+  padding:3px!important;margin:0!important;background:#050607!important;
+  overflow:auto!important;-webkit-overflow-scrolling:touch!important;
+  touch-action:none!important;overscroll-behavior:contain!important;
+}
+.boardZoomStage{position:relative!important;display:block!important;background:transparent!important;margin:0!important;padding:0!important;transform:none!important}
+.zoomableDepartureBoard{
+  position:absolute!important;left:0!important;top:0!important;margin:0!important;
+  width:1180px!important;min-width:1180px!important;max-width:1180px!important;
+  transform-origin:0 0!important;will-change:transform!important;
+}
+.zoomableDepartureBoard.platform{grid-template-columns:240px 940px!important}
+.zoomableDepartureBoard.platform .platformRight,
+.zoomableDepartureBoard.platform .platformRight>div{width:940px!important;min-width:940px!important;max-width:940px!important}
+/* No orientation-dependent typography: portrait and landscape are literally the same board. */
+@media (orientation:portrait),(orientation:landscape){
+  .zoomableDepartureBoard,.zoomableDepartureBoard *{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
+}
+</style>
+
+<style id="v27TrueBoardPinchFix">
+/* V27: the actual departure board, not the surrounding viewport, is pinch-scaled. */
+#display{
+  position:relative!important; overflow:auto!important; -webkit-overflow-scrolling:touch!important;
+  touch-action:none!important; overscroll-behavior:contain!important; background:#050607!important;
+}
+.boardZoomStage{position:relative!important;display:block!important;background:transparent!important;margin:0!important;padding:0!important;transform:none!important}
+.zoomableDepartureBoard{
+  position:absolute!important;left:0!important;top:0!important;margin:0!important;
+  width:1180px!important;min-width:1180px!important;max-width:1180px!important;
+  transform:scale(var(--board-scale,1))!important;
+  transform-origin:0 0!important;will-change:transform!important;zoom:1!important;
+}
+.zoomableDepartureBoard.platform{grid-template-columns:240px 940px!important}
+.zoomableDepartureBoard.platform .platformRight,
+.zoomableDepartureBoard.platform .platformRight>div{width:940px!important;min-width:940px!important;max-width:940px!important}
+/* The continuous route line stays visible through the highlighted current station. */
+.stops{isolation:isolate!important}
+.stops::after{z-index:1!important}
+.stop{z-index:2!important;background:transparent!important}
+.stop.current{background:transparent!important}
+.stop.current::before{z-index:4!important}
+.stopLabel{z-index:5!important}
+/* A freshly-rendered board is hidden only for the microtask in which it is wrapped/scaled.
+   This prevents a single unscaled frame from flashing before the zoom state is restored. */
+#display > .platform:not(.zoomableDepartureBoard),
+#display > .concourse:not(.zoomableDepartureBoard){visibility:hidden!important}
+.boardZoomStage>.zoomableDepartureBoard{visibility:visible!important}
+</style>
+<script>
+(()=>{
+  const viewport=document.getElementById('display');
+  if(!viewport) return;
+
+  let stage=null, board=null, gesture=null, installQueued=false;
+  const state={scale:1, scrollLeft:0, scrollTop:0, initialized:false, manual:false};
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const directSelector=':scope > .platform, :scope > .concourse';
+
+  function vsize(){ const r=viewport.getBoundingClientRect(); return {w:Math.max(1,r.width),h:Math.max(1,r.height)}; }
+  function nsize(){
+    if(!board) return {w:1180,h:500};
+    return {w:Math.max(1,board.offsetWidth||1180), h:Math.max(1,board.offsetHeight||board.scrollHeight||500)};
+  }
+  function fitScale(){
+    const v=vsize(), n=nsize();
+    return clamp(Math.min((v.w-8)/n.w,(v.h-8)/n.h,1),0.08,1);
+  }
+  function updateStage(){
+    if(!stage||!board) return;
+    const n=nsize();
+    stage.style.width=(n.w*state.scale)+'px';
+    stage.style.height=(n.h*state.scale)+'px';
+    board.style.setProperty('--board-scale',String(state.scale));
+  }
+  function restoreScroll(){
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      viewport.scrollLeft=state.scrollLeft;
+      viewport.scrollTop=state.scrollTop;
+    }));
+  }
+  function setScale(next,anchor){
+    if(!board||!stage) return;
+    const old=state.scale;
+    const min=Math.min(fitScale(),0.12);
+    const ns=clamp(next,min,3.5);
+    let contentX=0,contentY=0;
+    if(anchor){
+      contentX=(viewport.scrollLeft+anchor.x)/Math.max(old,0.001);
+      contentY=(viewport.scrollTop+anchor.y)/Math.max(old,0.001);
+    }
+    state.scale=ns; state.manual=true;
+    updateStage();
+    if(anchor){
+      viewport.scrollLeft=Math.max(0,contentX*ns-anchor.x);
+      viewport.scrollTop=Math.max(0,contentY*ns-anchor.y);
+      state.scrollLeft=viewport.scrollLeft; state.scrollTop=viewport.scrollTop;
+    }
+  }
+  function fitOnce(){
+    if(!board) return;
+    state.scale=fitScale();
+    state.scrollLeft=0; state.scrollTop=0;
+    updateStage();
+    viewport.scrollLeft=0; viewport.scrollTop=0;
+    state.initialized=true;
+  }
+  function installBoard(){
+    installQueued=false;
+    let direct=viewport.querySelector(directSelector);
+    if(direct){
+      // render() may have replaced the entire contents. Rebuild only the transparent stage,
+      // while preserving the user's scale and pan coordinates.
+      stage=document.createElement('div');
+      stage.className='boardZoomStage';
+      viewport.insertBefore(stage,direct);
+      stage.appendChild(direct);
+      board=direct;
+      board.classList.add('zoomableDepartureBoard');
+      if(!state.initialized) requestAnimationFrame(fitOnce);
+      else { requestAnimationFrame(()=>{ updateStage(); restoreScroll(); }); }
+      return;
+    }
+    const ex=viewport.querySelector(':scope > .boardZoomStage');
+    if(ex){
+      stage=ex; board=ex.querySelector(':scope > .platform, :scope > .concourse');
+      if(board){ board.classList.add('zoomableDepartureBoard'); updateStage(); restoreScroll(); }
+    }
+  }
+  function queueInstall(){ if(installQueued) return; installQueued=true; installBoard(); }
+
+  // Remember pan continuously, so a scheduled render cannot snap the board back to 0,0.
+  viewport.addEventListener('scroll',()=>{
+    state.scrollLeft=viewport.scrollLeft; state.scrollTop=viewport.scrollTop;
+  },{passive:true});
+
+  new MutationObserver(muts=>{
+    if(muts.some(m=>m.type==='childList')) queueInstall();
+  }).observe(viewport,{childList:true});
+  installBoard();
+
+  const distance=(a,b)=>Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY);
+  const midpoint=(a,b)=>{ const r=viewport.getBoundingClientRect(); return {x:(a.clientX+b.clientX)/2-r.left,y:(a.clientY+b.clientY)/2-r.top}; };
+
+  viewport.addEventListener('touchstart',e=>{
+    if(e.touches.length===2){
+      e.preventDefault();
+      const a=e.touches[0],b=e.touches[1];
+      gesture={type:'pinch',startDist:Math.max(1,distance(a,b)),startScale:state.scale};
+    }else if(e.touches.length===1){
+      const t=e.touches[0];
+      gesture={type:'pan',x:t.clientX,y:t.clientY,left:viewport.scrollLeft,top:viewport.scrollTop};
+    }
+  },{passive:false});
+  viewport.addEventListener('touchmove',e=>{
+    if(!gesture) return;
+    if(e.touches.length===2){
+      e.preventDefault();
+      const a=e.touches[0],b=e.touches[1];
+      if(gesture.type!=='pinch') gesture={type:'pinch',startDist:Math.max(1,distance(a,b)),startScale:state.scale};
+      const ratio=distance(a,b)/gesture.startDist;
+      setScale(gesture.startScale*ratio,midpoint(a,b));
+    }else if(e.touches.length===1 && gesture.type==='pan'){
+      e.preventDefault();
+      const t=e.touches[0];
+      viewport.scrollLeft=gesture.left-(t.clientX-gesture.x);
+      viewport.scrollTop=gesture.top-(t.clientY-gesture.y);
+      state.scrollLeft=viewport.scrollLeft; state.scrollTop=viewport.scrollTop;
+    }
+  },{passive:false});
+  viewport.addEventListener('touchend',e=>{
+    if(e.touches.length===0) gesture=null;
+    else if(e.touches.length===1){
+      const t=e.touches[0];
+      gesture={type:'pan',x:t.clientX,y:t.clientY,left:viewport.scrollLeft,top:viewport.scrollTop};
+    }
+  },{passive:false});
+  viewport.addEventListener('touchcancel',()=>gesture=null,{passive:true});
+
+  // Rotation/resize keeps the current user zoom and pan. It never auto-resets after initialization.
+  addEventListener('resize',()=>{ if(board){ updateStage(); restoreScroll(); } });
+  addEventListener('orientationchange',()=>setTimeout(()=>{ if(board){ updateStage(); restoreScroll(); } },180));
+
+  // Marquee progress is keyed by text, not DOM nodes, so re-rendering doesn't restart it.
+  const marqueeByText=new Map();
+  let last=performance.now(); const SPEED=48, GAP=100;
+  function tick(now){
+    const dt=Math.min(.05,(now-last)/1000); last=now;
+    document.querySelectorAll('.noticeWindow .noticeTrack').forEach(track=>{
+      const win=track.parentElement; if(!win) return;
+      const ww=win.clientWidth,tw=track.scrollWidth; if(!ww||!tw) return;
+      const key=track.textContent||'';
+      let x=marqueeByText.has(key)?marqueeByText.get(key):ww;
+      x-=SPEED*dt;
+      if(x<=-tw-GAP) x=ww;
+      marqueeByText.set(key,x);
+      track.style.transform=`translate3d(${x}px,-50%,0)`;
+    });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+
+
+<style id="v30BetweenPositionFixStyle">
+/* V30: reliable between-station marker. The marker is independent from station dots. */
+.approachBetweenLayerV30{
+  position:absolute!important;
+  inset:0!important;
+  pointer-events:none!important;
+  z-index:8!important;
+}
+.approachBetweenMarkerV30{
+  position:absolute!important;
+  bottom:14px!important;
+  transform:translateX(-50%)!important;
+  width:14px!important;
+  height:14px!important;
+  border-radius:50%!important;
+  background:#cf3b4b!important;
+  border:2px solid #fff!important;
+  box-sizing:border-box!important;
+  box-shadow:0 0 8px rgba(207,59,75,.9)!important;
+}
+.approachBetweenMarkerV30::after{
+  content:"現在位置"!important;
+  position:absolute!important;
+  left:50%!important;
+  top:17px!important;
+  transform:translateX(-50%)!important;
+  white-space:nowrap!important;
+  color:#ff9da7!important;
+  font-size:10px!important;
+  line-height:1!important;
+  font-weight:800!important;
+  text-shadow:0 1px 2px #000!important;
+}
+</style>
+<script id="v30BetweenPositionFixLogic">
+(function(){
+  'use strict';
+  if(typeof timingForStation!=='function' || typeof trainDepartureMs!=='function') return;
+
+  function keyName(v){return String(v??'').trim().replace(/[\s　]+/g,'').replace(/駅$/,'')}
+
+  /* Resolve the physical approach to the selected station from each station's
+     configured arrival/departure offset.  After a station's departure instant,
+     the state is explicitly "between" until the next station's arrival. */
+  selectedStationApproachState=function(t){
+    const r=route();
+    const all=Array.isArray(r?.stops)?r.stops:[];
+    const selected=(typeof selectedStationName==='function')?selectedStationName(r):(data?.selected?.station||'');
+    const sel=all.findIndex(x=>keyName(x)===keyName(selected));
+    if(sel<0||!all.length)return null;
+
+    const depMs=trainDepartureMs(t), now=Date.now();
+    const start=Math.max(0,sel-3);
+    const events=[];
+    for(let i=start;i<=sel;i++){
+      const tm=timingForStation(r,all[i]);
+      let arr=depMs-Math.max(0,Number(tm.arrivalBefore)||0)*1000;
+      let leave=depMs-Math.max(0,Number(tm.departureBefore)||0)*1000;
+      /* A station cannot depart before it arrives. If malformed input is supplied,
+         clamp departure to arrival instead of leaving the UI stuck at that station. */
+      if(leave<arr) leave=arr;
+      events.push({idx:i,arr,leave});
+    }
+
+    if(now<events[0].arr){
+      return {all,selectedIdx:sel,currentIdx:start,visible:false,atSelected:false,betweenAfter:null,state:'before'};
+    }
+
+    for(let k=0;k<events.length;k++){
+      const e=events[k];
+      if(now>=e.arr && now<e.leave){
+        return {all,selectedIdx:sel,currentIdx:e.idx,visible:true,atSelected:e.idx===sel,betweenAfter:null,state:'station'};
+      }
+      if(k<events.length-1){
+        const nx=events[k+1];
+        /* This is the requested rule: once the previous station departure time
+           has passed, show the train between that station and the next one. */
+        if(now>=e.leave && now<nx.arr){
+          return {all,selectedIdx:sel,currentIdx:e.idx+0.5,visible:true,atSelected:false,betweenAfter:e.idx,state:'between'};
+        }
+      }
+    }
+
+    const last=events[events.length-1];
+    if(now>=last.arr){
+      return {all,selectedIdx:sel,currentIdx:sel,visible:true,atSelected:true,betweenAfter:null,state:'selected'};
+    }
+    return {all,selectedIdx:sel,currentIdx:start,visible:true,atSelected:false,betweenAfter:null,state:'station'};
+  };
+
+  approachPositionHtml=function(t){
+    const p=selectedStationApproachState(t);
+    if(!p||!p.visible)return `<div class="positionApproach"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram"><span style="color:#9aa4ad">接近前</span></div></div>`;
+
+    const start=Math.max(0,p.selectedIdx-3);
+    const view=p.all.slice(start,p.selectedIdx+1);
+    const n=Math.max(1,view.length);
+    const stationIdx=Number.isInteger(p.currentIdx)?p.currentIdx:-1;
+    let between='';
+    if(Number.isInteger(p.betweenAfter) && n>1){
+      const rel=p.betweenAfter-start;
+      if(rel>=0 && rel<n-1){
+        /* Station centres are evenly spaced; the moving marker is the midpoint
+           between the two relevant centres. */
+        const pct=((rel+0.5)/(n-1))*100;
+        between=`<div class="approachBetweenLayerV30"><span class="approachBetweenMarkerV30" style="left:${pct.toFixed(3)}%"></span></div>`;
+      }
+    }
+
+    return `<div class="positionApproach" style="--line:${esc(route().lineColor||'#2680d9')}"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram">${view.map((name,j)=>{const real=start+j;return `<span class="approachStop ${real===stationIdx?'current':''}"><span class="approachStopName">${esc(name)}</span></span>`}).join('')}${between}</div></div>`;
+  };
+
+  /* The old 1-second refresh key used currentIndex(), which does not know the
+     station-timing "between" state. Add the real approach state to the key so the
+     screen updates exactly when a departure/arrival boundary is crossed. */
+  let v30Last='';
+  setInterval(function(){
+    try{
+      if(data.mode!=='platform')return;
+      const r=route(); if(!r)return;
+      const f=upcoming(r).filter(t=>String(t.platform)===String(data.selected.platform))[0];
+      const p=f?selectedStationApproachState(f):null;
+      const k=f ? [f.time,p?.state,p?.currentIdx,p?.betweenAfter,platformPhase(f)].join('|') : '-';
+      if(k!==v30Last){
+        v30Last=k;
+        if(typeof lastRenderKey!=='undefined')lastRenderKey='';
+        render();
+      }
+    }catch(e){}
+  },250);
+
+  try{ if(typeof lastRenderKey!=='undefined')lastRenderKey=''; render(); }catch(e){}
+})();
+</script>
+
+</body></html>
+
+<style>
+/* V-current-position: position is relative to the station currently selected in the system. */
+.platformNoticeStrip.arrival{
+  animation: platformApproachBlink 1s steps(1,end) infinite;
+}
+@keyframes platformApproachBlink{
+  0%,49%{opacity:1}
+  50%,100%{opacity:.08}
+}
+</style>
+<script>
+/* Current train position: show where the train is BEFORE the currently selected station.
+   The approach starts three stations before the selected station. */
+function selectedStationApproachState(t){
+  const r=route();
+  const all=(r&&Array.isArray(r.stops))?r.stops:[];
+  const stationName=data.selected.station;
+  let selectedIdx=all.indexOf(stationName);
+
+  /* Fallback for older data where the station list was not filled in. */
+  if(selectedIdx<0){
+    const ts=Array.isArray(t.stops)?t.stops:[];
+    const first=ts[0];
+    if(first){
+      selectedIdx=all.indexOf(first);
+    }
+  }
+  if(selectedIdx<0 || !all.length) return null;
+
+  /* currentMinutes means the estimated running time per station.
+     We only expose the position once the train is within three stations. */
+  const secPerStation=Math.max(6, Number(data.settings.currentMinutes||1)*60);
+  const remain=Math.max(0, trainDelta(t));
+  const stationsBefore=Math.min(3, Math.max(0, Math.ceil(remain/secPerStation)));
+  const currentIdx=Math.max(0, selectedIdx-stationsBefore);
+  const visible=remain <= secPerStation*3;
+  return {all,selectedIdx,currentIdx,visible};
+}
+
+/* Override the old destination-based approach diagram. */
+approachPositionHtml=function(t){
+  const p=selectedStationApproachState(t);
+  if(!p || !p.visible){
+    return `<div class="positionApproach"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram"><span style="color:#9aa4ad">接近前</span></div></div>`;
+  }
+  const start=Math.max(0,p.selectedIdx-3);
+  const view=p.all.slice(start,p.selectedIdx+1);
+  return `<div class="positionApproach" style="--line:${esc(route().lineColor||'#2680d9')}"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram">${view.map((name,j)=>{
+    const real=start+j;
+    const cls=real===p.currentIdx?'current':'';
+    return `<span class="approachStop ${cls}"><span class="approachStopName">${esc(name)}</span></span>`;
+  }).join('')}</div></div>`;
+};
+
+/* Make the periodic position row appear only when the next train is within
+   three stations of the selected station. The rest of render() remains intact. */
+const __railwayRenderVCurrent=render;
+render=function(){
+  __railwayRenderVCurrent();
+  if(data.mode!=='platform') return;
+  const r=route(); if(!r) return;
+  const pl=data.selected.platform;
+  const fl=upcoming(r).filter(t=>String(t.platform)===String(pl)).slice(0,3);
+  if(!fl[0]) return;
+  const p=selectedStationApproachState(fl[0]);
+  const pos=document.querySelector('.positionApproach');
+  if(pos && (!p || !p.visible)){
+    /* If the old periodic cycle requested a position row while the train is
+       still farther than three stations away, restore the normal 3-train rows. */
+    const host=document.querySelector('.platformRight>div');
+    if(host){
+      const row=(t)=>`<div class="train"><div class="time">${t.time}</div>${serviceHtml(t)}<div class="origin">${t.origin?'当駅始発':''}</div><div class="dest">${esc(t.dest)}<small>${esc(t.destEn)}</small></div><div class="meta">${esc(t.cars)}両</div><div class="meta">${esc(t.platform)}番線</div></div>`;
+      const head=host.querySelector('.head')?.outerHTML||'';
+      const strip=host.querySelector('.platformNoticeStrip')?.outerHTML||'<div class="platformNoticeStrip"></div>';
+      host.innerHTML=head+fl.slice(0,3).map(row).join('')+strip;
+    }
+  }
+};
+</script>
+
+<style>
+/* V-current-stop-cleanup: concourse stop lists are informational only.
+   Never highlight a station in red here; current-position emphasis belongs
+   exclusively to the platform approach-position diagram. */
+.concourse .stop.current,
+.concourse .stop.current .stopLabel{
+  color:#fff!important;
+  text-shadow:none!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.concourse .stop.current::before{
+  background:var(--svc,var(--line,#2787dd))!important;
+  border-color:#fff!important;
+  box-shadow:none!important;
+}
+</style>
+
+<style id="v28TimingStyles">
+/* V28 — timetable-derived arrival/approach behavior. Additive only. */
+.timingHelp{font-size:12px;color:#66717c;line-height:1.55;margin-top:6px}
+.platformNoticeStrip.arrival{animation:platformApproachBlink .9s steps(1,end) infinite!important}
+@keyframes platformApproachBlink{0%,48%{opacity:1}49%,100%{opacity:.08}}
+</style>
+<script id="v28TimingLogic">
+(function(){
+  'use strict';
+
+  const pad2=n=>String(Math.max(0,Math.floor(n))).padStart(2,'0');
+  function offsetToText(sec){
+    sec=Math.max(0,Math.round(Number(sec)||0));
+    return pad2(Math.floor(sec/60))+':'+pad2(sec%60);
+  }
+  function textToOffset(v){
+    v=String(v??'').trim();
+    if(!v)return null;
+    if(/^\d+(?:\.\d+)?$/.test(v))return Math.max(0,Math.round(Number(v)));
+    const p=v.split(':').map(Number);
+    if(p.length===2&&p.every(Number.isFinite))return Math.max(0,Math.round(p[0]*60+p[1]));
+    return null;
+  }
+  function ensureStationTiming(r){
+    if(!r)return {};
+    if(!r.stationTiming||typeof r.stationTiming!=='object'||Array.isArray(r.stationTiming))r.stationTiming={};
+    return r.stationTiming;
+  }
+  function stationNameKey(v){return String(v??'').trim().replace(/[\s　]+/g,'').replace(/[（(［\[].*?[）)］\]]/g,'').replace(/駅$/,'')}
+  function selectedStationName(r=route()){
+    const raw=data?.selected?.station||'';
+    const all=Array.isArray(r?.stops)?r.stops:[];
+    const key=stationNameKey(raw);
+    return all.find(x=>stationNameKey(x)===key)||String(raw).trim().replace(/駅$/,'');
+  }
+  function defaultArrivalBefore(){
+    /* Preserve the former 50-second stopped window as the migration default. */
+    return Math.max(1,Number(data?.settings?.stoppedSec)||50);
+  }
+  function timingForStation(r,name){
+    const map=ensureStationTiming(r);
+    const wanted=stationNameKey(name);
+    const mapKey=Object.keys(map).find(k=>stationNameKey(k)===wanted);
+    const x=mapKey?map[mapKey]:map[name];
+    if(x&&Number.isFinite(Number(x.arrivalBefore))&&Number.isFinite(Number(x.departureBefore))){
+      return {arrivalBefore:Math.max(0,Number(x.arrivalBefore)),departureBefore:Math.max(0,Number(x.departureBefore))};
+    }
+    const all=Array.isArray(r?.stops)?r.stops:[];
+    const selected=selectedStationName(r);
+    const sel=all.findIndex(x=>stationNameKey(x)===stationNameKey(selected));
+    const idx=all.findIndex(x=>stationNameKey(x)===wanted);
+    if(sel>=0&&idx>=0&&idx<=sel){
+      const secPer=Math.max(20,(Number(data?.settings?.currentMinutes)||3)*60);
+      const dwell=Math.min(30,Math.max(10,secPer*.12));
+      if(idx===sel)return {arrivalBefore:defaultArrivalBefore(),departureBefore:0};
+      const distance=sel-idx;
+      const depBefore=defaultArrivalBefore()+distance*secPer;
+      return {arrivalBefore:depBefore+dwell,departureBefore:depBefore};
+    }
+    return {arrivalBefore:0,departureBefore:0};
+  }
+  function trainDepartureMs(t){
+    if(Number.isFinite(Number(t?._dep)))return Number(t._dep);
+    const now=new Date(),raw=String(t?.time||'').trim();
+    let hh=now.getHours(),mm=0;
+    if(raw.includes(':')){const a=raw.split(':').map(Number);hh=a[0];mm=a[1]}else mm=Number(raw);
+    if(!Number.isFinite(hh)||!Number.isFinite(mm))return Date.now()+86400000;
+    const d=new Date(now);d.setHours(hh,mm,0,0);
+    if(d.getTime()<Date.now()-43200000)d.setDate(d.getDate()+1);
+    if(d.getTime()>Date.now()+43200000)d.setDate(d.getDate()-1);
+    return d.getTime();
+  }
+  function trainTimingState(t,r=route()){
+    const depMs=trainDepartureMs(t),now=Date.now(),sel=selectedStationName();
+    const self=timingForStation(r,sel);
+    const arrMs=depMs-self.arrivalBefore*1000;
+    return {depMs,arrMs,depDelta:(depMs-now)/1000,arrivalDelta:(arrMs-now)/1000,arrivalBefore:self.arrivalBefore};
+  }
+  window.__trainTimingState=trainTimingState;
+
+  /* At the scheduled departure instant the train is no longer listed. */
+  upcoming=function(r){
+    const src=(r.patterns?generatedTrains(r):(r.trains||[]).map(x=>clone(x)));
+    return src.sort((a,b)=>trainDelta(a)-trainDelta(b)).filter(t=>trainDelta(t)>0);
+  };
+
+  /* Concourse status is based on the configured arrival time, not an arbitrary
+     number of seconds before departure. Between arrival and departure it is stopped. */
+  status=function(t){
+    const x=trainTimingState(t),s=data.settings||{};
+    if(x.depDelta<=0)return '';
+    if(x.arrivalDelta<=0)return '停車中';
+    if(x.arrivalDelta<=Math.max(1,Number(s.arrivalSec)||105))return 'まもなく到着';
+    return '';
+  };
+
+  /* Work out the next train's approach from station-specific arrival/departure offsets.
+     Only the selected station and its preceding three stations are used on the platform. */
+  selectedStationApproachState=function(t){
+    const r=route(),all=Array.isArray(r?.stops)?r.stops:[];
+    const selected=selectedStationName(r);
+    const sel=all.findIndex(x=>stationNameKey(x)===stationNameKey(selected));
+    if(sel<0||!all.length)return null;
+
+    const depMs=trainDepartureMs(t),now=Date.now(),start=Math.max(0,sel-3);
+    const events=[];
+    for(let i=start;i<=sel;i++){
+      const tm=timingForStation(r,all[i]);
+      let arr=depMs-Math.max(0,Number(tm.arrivalBefore)||0)*1000;
+      let leave=depMs-Math.max(0,Number(tm.departureBefore)||0)*1000;
+      /* In the "seconds before departure" system, arrivalBefore must be
+         greater than or equal to departureBefore.  If a malformed row is
+         entered, keep the station dwell non-negative instead of trapping the
+         position marker at the previous station. */
+      if(leave<arr) leave=arr;
+      events.push({idx:i,arr,leave,name:all[i]});
+    }
+
+    if(now<events[0].arr){
+      return {all,selectedIdx:sel,currentIdx:start,visible:false,atSelected:false,state:'before',betweenAfter:null,progress:0};
+    }
+
+    for(let k=0;k<events.length;k++){
+      const e=events[k];
+      if(now>=e.arr && now<e.leave){
+        return {all,selectedIdx:sel,currentIdx:e.idx,visible:true,atSelected:e.idx===sel,state:'station',betweenAfter:null,progress:0};
+      }
+      if(k<events.length-1){
+        const nx=events[k+1];
+        if(now>=e.leave && now<nx.arr){
+          const span=Math.max(1,nx.arr-e.leave);
+          const progress=Math.max(0,Math.min(1,(now-e.leave)/span));
+          return {all,selectedIdx:sel,currentIdx:e.idx+progress,visible:true,atSelected:false,state:'between',betweenAfter:e.idx,progress};
+        }
+      }
+    }
+
+    const last=events[events.length-1];
+    if(now>=last.arr){
+      return {all,selectedIdx:sel,currentIdx:sel,visible:true,atSelected:true,state:'selected',betweenAfter:null,progress:1};
+    }
+    return {all,selectedIdx:sel,currentIdx:start,visible:true,atSelected:false,state:'station',betweenAfter:null,progress:0};
+  };
+
+  approachPositionHtml=function(t){
+    const p=selectedStationApproachState(t);
+    if(!p||!p.visible)return `<div class="positionApproach"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram"><span style="color:#9aa4ad">接近前</span></div></div>`;
+
+    const start=Math.max(0,p.selectedIdx-3),view=p.all.slice(start,p.selectedIdx+1);
+    const n=Math.max(1,view.length);
+    const stationIdx=Number.isInteger(p.currentIdx)?p.currentIdx:-1;
+    let between='';
+    if(p.state==='between' && Number.isInteger(p.betweenAfter) && n>1){
+      const rel=p.betweenAfter-start;
+      if(rel>=0 && rel<n-1){
+        const pct=((rel+Math.max(0,Math.min(1,Number(p.progress)||0)))/(n-1))*100;
+        between=`<div class="approachBetweenLayerV31"><span class="approachBetweenMarkerV31" style="left:${pct.toFixed(3)}%"></span></div>`;
+      }
+    }
+    return `<div class="positionApproach" style="--line:${esc(route().lineColor||'#2680d9')}"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram">${view.map((name,j)=>{const real=start+j;return `<span class="approachStop ${real===stationIdx?'current':''}"><span class="approachStopName">${esc(name)}</span></span>`}).join('')}${between}</div></div>`;
+  };
+
+  function platformPhase(t){
+    if(!t)return 'none';
+    const x=trainTimingState(t),start=Math.max(1,Number(data.settings.arrivalSec)||105);
+    if(x.depDelta<=0)return 'departed';
+    /* From 20 seconds before arrival through departure, show stop information. */
+    if(x.arrivalDelta<=20)return 'stops';
+    if(x.arrivalDelta<=start)return 'approach';
+    return 'normal';
+  }
+  function stopMessage(t){
+    const st=Array.isArray(t?.stops)?t.stops:[];
+    const selected=selectedStationName(route());
+    let i=st.findIndex(x=>stationNameKey(x)===stationNameKey(selected)),later=i>=0?st.slice(i+1):st.slice(1);
+    if(!later.length)later=st.filter(x=>x!==selected);
+    return `この電車は${later.length?later.join('、'):'各駅'}に止まります。`;
+  }
+
+  /* Final board renderer. It keeps all established layout/zoom code untouched and
+     changes only timetable state/strip behavior. */
+  render=function(){
+    const r=route();if(!r)return;
+    const list=upcoming(r),mode=data.mode;
+    if(mode==='concourse'){
+      const rows=list.slice(0,6).map(t=>`<div class="train"><div class="time">${t.time}</div>${serviceHtml(t)}<div class="origin">${t.origin?'当駅始発':''}</div><div class="dest">${esc(t.dest)}<small>${esc(t.destEn)}</small></div><div class="meta">${esc(t.cars)}両</div><div class="meta">${esc(t.platform)}番線</div><div>${stopsHtml(t,false)}</div><div class="status">${status(t)}</div></div>`).join('');
+      $('display').innerHTML=`<div class="concourse"><div class="panel"><div class="routeHead" style="--line:${r.lineColor}"><div class="code">${esc(r.code)}</div><div><div class="routeName">${esc(r.name)}</div><div class="sub">${esc(r.nameEn)}</div></div></div><div class="head"><div>時刻</div><div>種別</div><div>始発</div><div>行き先</div><div>両数</div><div>番線</div><div>停車駅一覧</div><div>案内</div></div>${rows}${noticeHtml()}</div></div>`;
+    }else{
+      const pl=data.selected.platform,fl=list.filter(t=>String(t.platform)===String(pl)).slice(0,3),first=fl[0];
+      const nowSec=Math.floor(Date.now()/1000),stopEvery=Math.max(1,Number(data.settings.platformStopEvery)||12);
+      const p=first?selectedStationApproachState(first):null;
+      const showPosition=!!first&&!!p?.visible&&nowSec%(stopEvery+8)<8;
+      const row=t=>`<div class="train"><div class="time">${t.time}</div>${serviceHtml(t)}<div class="origin">${t.origin?'当駅始発':''}</div><div class="dest">${esc(t.dest)}<small>${esc(t.destEn)}</small></div><div class="meta">${esc(t.cars)}両</div><div class="meta">${esc(t.platform)}番線</div></div>`;
+      let body='';
+      if(showPosition&&first){body+=row(first);body+=approachPositionHtml(first);body+=fl[1]?row(fl[1]):`<div class="train"></div>`}
+      else for(let i=0;i<3;i++)body+=fl[i]?row(fl[i]):`<div class="train"></div>`;
+
+      let strip=`<div class="platformNoticeStrip"></div>`;
+      if(first){
+        const phase=platformPhase(first);
+        if(phase==='approach')strip=`<div class="platformNoticeStrip arrival">まもなく電車がまいります</div>`;
+        else if(phase==='stops')strip=`<div class="platformNoticeStrip">${noticeHtml(stopMessage(first),'【停車駅】')}</div>`;
+        else {
+          const noticeEvery=Math.max(1,Number(data.settings.platformNoticeEvery)||30),noticeDur=Math.max(0,Number(data.settings.platformNoticeDuration)||8);
+          if(nowSec%noticeEvery<noticeDur)strip=`<div class="platformNoticeStrip">${noticeHtml()}</div>`;
+        }
+      }
+      $('display').innerHTML=`<div class="platform panel" style="--line:${r.lineColor}"><aside class="platformInfo"><div class="routeName">${esc(r.name)}</div><div class="sub">${esc(r.nameEn)}</div><div class="platformNo">${esc(pl)}</div><div class="direction">${esc(r.direction)}</div><div class="sub">${esc(r.directionEn)}</div><div class="sub through" style="margin-top:5px">直通先：${esc(r.through)}</div><div class="codes"><span class="miniCode">${esc(r.code)}</span></div></aside><section class="platformRight"><div><div class="head"><div>時刻</div><div>種別</div><div>始発</div><div>行き先</div><div>両数</div><div>番線</div></div>${body}${strip}</div></section></div>`;
+    }
+    /* Reapply the existing persisted viewport transform without resetting it. */
+    if(typeof window.__applyBoardTransform==='function')requestAnimationFrame(()=>window.__applyBoardTransform());
+  };
+
+  /* Add station timing controls to the existing Stop/Position settings tab without
+     replacing or removing any of the established controls. */
+  const oldSettingsRender=settingsRender;
+  settingsRender=function(){
+    oldSettingsRender();
+    if(tab!=='stops'||!draft)return;
+    const r=route(draft),body=$('settingsBody');if(!r||!body)return;
+    const map=ensureStationTiming(r),all=Array.isArray(r.stops)?r.stops:[];
+    const rawSel=draft.selected.station,sel=all.find(x=>stationNameKey(x)===stationNameKey(rawSel))||String(rawSel||'').replace(/駅$/,''),selIdx=all.findIndex(x=>stationNameKey(x)===stationNameKey(sel)),start=0;
+    const lines=all.slice(start,selIdx>=0?selIdx+1:all.length).map(name=>{
+      const x=map[name];
+      if(x)return `${name}|${offsetToText(x.arrivalBefore)}|${offsetToText(x.departureBefore)}`;
+      if(name===sel)return `${name}|${offsetToText(defaultArrivalBefore())}|00:00`;
+      return `${name}||`;
+    }).join('\n');
+    body.insertAdjacentHTML('beforeend',`<div class="card"><h2>発車時刻から逆算する駅別時刻</h2><div class="hint">各時刻は、表示駅の発車時刻から何分何秒前かを設定します。例：<b>${esc(sel)}|00:50|00:00</b> は「${esc(sel)}に発車50秒前に到着、発車時刻に発車」です。前駅は「前駅|03:10|02:40」のように設定できます。</div><div class="field"><label>駅名|到着（何分:何秒前）|発車（何分:何秒前）</label><textarea id="stationTimingText" placeholder="${esc(sel)}|00:50|00:00">${esc(lines)}</textarea></div><div class="field"><label>「まもなく電車がまいります／まもなく到着」を出す時間（到着の何秒前から）</label><input id="arrivalLeadSec" type="number" min="21" step="1" value="${Math.max(21,Number(draft.settings.arrivalSec)||105)}"></div><div class="timingHelp">表示は発車時刻ではなく、この駅の到着時刻を基準にします。到着20秒前で接近表示を終了し、その後は発車まで停車駅案内を流します。未入力の駅は従来の「何分で1駅」の設定から自動推定します。</div></div>`);
+  };
+
+  const oldPullTab=pullTab;
+  pullTab=function(){
+    if(draft&&tab==='stops'&&$('stationTimingText')){
+      const r=route(draft),text=$('stationTimingText').value,map={};
+      String(text||'').split(/\n+/).map(x=>x.trim()).filter(Boolean).forEach(line=>{
+        const a=line.split('|'),name=(a[0]||'').trim(),arr=textToOffset(a[1]),dep=textToOffset(a[2]);
+        if(name&&arr!==null&&dep!==null)map[name]={arrivalBefore:arr,departureBefore:dep};
+      });
+      r.stationTiming=map;
+      if($('arrivalLeadSec'))draft.settings.arrivalSec=Math.max(21,Number($('arrivalLeadSec').value)||105);
+    }
+    return oldPullTab();
+  };
+
+  /* Existing refresh predates arrival-time phases. This tiny boundary watcher only
+     redraws when the phase/current approach station changes, avoiding 1-second flicker. */
+  let lastTimingUiKey='';
+  setInterval(()=>{
+    const r=route();if(!r)return;
+    const u=upcoming(r);
+    let key=data.mode+'|'+data.selected.station+'|'+data.selected.route+'|'+data.selected.platform;
+    if(data.mode==='platform'){
+      const f=u.filter(t=>String(t.platform)===String(data.selected.platform))[0];
+      const p=f?selectedStationApproachState(f):null;
+      key+='|'+(f?f.time:'-')+'|'+platformPhase(f)+'|'+(p&&p.visible?(p.state+'~'+p.currentIdx+'~'+Math.floor((p.progress||0)*20)):'-');
+    }else{
+      key+='|'+u.slice(0,6).map(t=>t.time+'~'+status(t)).join(',');
+    }
+    if(key!==lastTimingUiKey){lastTimingUiKey=key;lastRenderKey='';render()}
+  },500);
+})();
+</script>
+<style id="v29BetweenStationPositionStyle">
+/* V29: when a train has departed the previous station, show its position on the line
+   between that station and the selected station/next station. */
+.approachDiagram{isolation:isolate}
+.approachBetweenLayer{
+  position:absolute!important;
+  left:12px!important;right:12px!important;top:8px!important;bottom:7px!important;
+  display:grid!important;
+  grid-template-columns:repeat(var(--approach-count),minmax(0,1fr))!important;
+  pointer-events:none!important;
+  z-index:4!important;
+}
+.approachBetweenMarker{
+  justify-self:center!important;
+  align-self:end!important;
+  margin-bottom:10px!important;
+  width:14px!important;height:14px!important;
+  border-radius:50%!important;
+  background:#cf3b4b!important;
+  border:2px solid #fff!important;
+  box-shadow:0 0 8px rgba(207,59,75,.9)!important;
+  position:relative!important;
+}
+.approachBetweenMarker::after{
+  content:"現在位置";
+  position:absolute;
+  left:50%;top:17px;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  color:#ff9da7;
+  font-size:10px;
+  line-height:1;
+  font-weight:800;
+  text-shadow:0 1px 2px #000;
+}
+</style>
+<script id="v29BetweenStationPositionLogic">
+(function(){
+  'use strict';
+  if(typeof timingForStation!=='function' || typeof trainDepartureMs!=='function') return;
+
+  /* The position now follows each station's arrival/departure times:
+     - arrival -> departure: on that station
+     - previous-station departure -> next-station arrival: between those stations
+     This also deliberately uses half-integer currentIdx values while between stations,
+     so the existing low-flicker watcher notices the transition without changing it. */
+  selectedStationApproachState=function(t){
+    const r=route(),all=Array.isArray(r?.stops)?r.stops:[];
+    const selected=selectedStationName(r);
+    const sel=all.findIndex(x=>stationNameKey(x)===stationNameKey(selected));
+    if(sel<0||!all.length)return null;
+
+    const depMs=trainDepartureMs(t),now=Date.now(),start=Math.max(0,sel-3);
+    const self=timingForStation(r,all[sel]);
+    const selectedArrivalMs=depMs-self.arrivalBefore*1000;
+    if(now>=selectedArrivalMs){
+      return {all,selectedIdx:sel,currentIdx:sel,visible:true,atSelected:true,betweenAfter:null};
+    }
+
+    for(let i=start;i<sel;i++){
+      const tm=timingForStation(r,all[i]);
+      const arr=depMs-tm.arrivalBefore*1000;
+      const leave=depMs-tm.departureBefore*1000;
+      const nextTm=timingForStation(r,all[i+1]);
+      const nextArr=depMs-nextTm.arrivalBefore*1000;
+
+      if(now>=arr && now<leave){
+        return {all,selectedIdx:sel,currentIdx:i,visible:true,atSelected:false,betweenAfter:null};
+      }
+      if(now>=leave && now<nextArr){
+        return {all,selectedIdx:sel,currentIdx:i+0.5,visible:true,atSelected:false,betweenAfter:i};
+      }
+    }
+
+    const first=timingForStation(r,all[start]);
+    const firstArr=depMs-first.arrivalBefore*1000;
+    if(now<firstArr)return {all,selectedIdx:sel,currentIdx:start,visible:false,atSelected:false,betweenAfter:null};
+    return {all,selectedIdx:sel,currentIdx:start,visible:true,atSelected:false,betweenAfter:null};
+  };
+
+  approachPositionHtml=function(t){
+    const p=selectedStationApproachState(t);
+    if(!p||!p.visible)return `<div class="positionApproach"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram"><span style="color:#9aa4ad">接近前</span></div></div>`;
+
+    const start=Math.max(0,p.selectedIdx-3),view=p.all.slice(start,p.selectedIdx+1),n=Math.max(1,view.length);
+    const isBetween=Number.isFinite(p.betweenAfter);
+    const stationIdx=Number.isInteger(p.currentIdx)?p.currentIdx:-1;
+    let between='';
+    if(isBetween){
+      const rel=p.betweenAfter-start;
+      if(rel>=0 && rel<n-1){
+        between=`<div class="approachBetweenLayer" style="--approach-count:${n}"><span class="approachBetweenMarker" style="grid-column:${rel+1} / span 2"></span></div>`;
+      }
+    }
+
+    return `<div class="positionApproach" style="--line:${esc(route().lineColor||'#2680d9')}"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram">${view.map((name,j)=>{const real=start+j;return `<span class="approachStop ${real===stationIdx?'current':''}"><span class="approachStopName">${esc(name)}</span></span>`}).join('')}${between}</div></div>`;
+  };
+
+  /* Force one clean refresh so the new renderer is used immediately. */
+  try{ if(typeof lastRenderKey!=='undefined')lastRenderKey=''; render(); }catch(e){}
+})();
+</script>
+
+<style id="v31BetweenStationStyle">
+.approachDiagram{position:relative!important}
+.approachBetweenLayerV31{position:absolute!important;left:0!important;right:0!important;top:0!important;bottom:0!important;pointer-events:none!important;z-index:9!important}
+.approachBetweenMarkerV31{position:absolute!important;bottom:14px!important;transform:translateX(-50%)!important;width:14px!important;height:14px!important;border-radius:50%!important;background:#cf3b4b!important;border:2px solid #fff!important;box-shadow:0 0 8px rgba(207,59,75,.95)!important;box-sizing:border-box!important}
+.approachBetweenMarkerV31::after{content:"現在位置"!important;position:absolute!important;top:17px!important;left:50%!important;transform:translateX(-50%)!important;white-space:nowrap!important;font-size:10px!important;line-height:1!important;font-weight:800!important;color:#ff9da7!important;text-shadow:0 1px 2px #000!important}
+</style>
+<style id="v32PositionFixStyle">
+/* Final current-position implementation. The route line stays continuous and the
+   train marker can sit anywhere between two station dots. */
+.approachDiagram{position:relative!important;isolation:isolate!important}
+.approachBetweenLayerV32{position:absolute!important;inset:0!important;pointer-events:none!important;z-index:12!important}
+.approachBetweenMarkerV32{position:absolute!important;bottom:14px!important;transform:translateX(-50%)!important;width:14px!important;height:14px!important;border-radius:50%!important;background:#cf3b4b!important;border:2px solid #fff!important;box-sizing:border-box!important;box-shadow:0 0 8px rgba(207,59,75,.95)!important}
+.approachBetweenMarkerV32::after{content:"現在位置"!important;position:absolute!important;left:50%!important;top:17px!important;transform:translateX(-50%)!important;white-space:nowrap!important;color:#ff9da7!important;font-size:10px!important;line-height:1!important;font-weight:800!important;text-shadow:0 1px 2px #000!important}
+</style>
+<script id="v32PositionFixLogic">
+(function(){
+  'use strict';
+  function canon(v){
+    return String(v??'').trim()
+      .replace(/[（(［\[].*?[）)］\]]/g,'')
+      .replace(/[\s　]+/g,'')
+      .replace(/駅$/,'');
+  }
+  function departureMs(t){
+    if(Number.isFinite(Number(t?._dep))) return Number(t._dep);
+    const now=new Date(), raw=String(t?.time||'').trim();
+    let hh=now.getHours(), mm=NaN;
+    if(raw.includes(':')){const a=raw.split(':').map(Number);hh=a[0];mm=a[1];}
+    else mm=Number(raw);
+    if(!Number.isFinite(hh)||!Number.isFinite(mm)) return now.getTime()+86400000;
+    const d=new Date(now); d.setHours(hh,mm,0,0);
+    if(d.getTime()<now.getTime()-43200000)d.setDate(d.getDate()+1);
+    if(d.getTime()>now.getTime()+43200000)d.setDate(d.getDate()-1);
+    return d.getTime();
+  }
+  function timingFor(r,name,idx,sel){
+    const map=(r&&r.stationTiming&&typeof r.stationTiming==='object'&&!Array.isArray(r.stationTiming))?r.stationTiming:{};
+    const mk=Object.keys(map).find(k=>canon(k)===canon(name));
+    const x=mk?map[mk]:null;
+    if(x && Number.isFinite(Number(x.arrivalBefore)) && Number.isFinite(Number(x.departureBefore))){
+      return {arrivalBefore:Math.max(0,Number(x.arrivalBefore)),departureBefore:Math.max(0,Number(x.departureBefore))};
+    }
+    /* Legacy fallback only for stations without an explicit timing row. */
+    const stopped=Math.max(1,Number(data?.settings?.stoppedSec)||50);
+    const secPer=Math.max(20,(Number(data?.settings?.currentMinutes)||3)*60);
+    const dwell=Math.min(30,Math.max(10,secPer*.12));
+    if(idx===sel)return {arrivalBefore:stopped,departureBefore:0};
+    const depBefore=stopped+(sel-idx)*secPer;
+    return {arrivalBefore:depBefore+dwell,departureBefore:depBefore};
+  }
+
+  window.selectedStationApproachState=function(t){
+    const r=route(), all=Array.isArray(r?.stops)?r.stops:[];
+    const selectedRaw=data?.selected?.station||'';
+    const sel=all.findIndex(x=>canon(x)===canon(selectedRaw));
+    if(sel<0||!all.length)return null;
+
+    const start=Math.max(0,sel-3), dep=departureMs(t), now=Date.now();
+    const ev=[];
+    for(let i=start;i<=sel;i++){
+      const tm=timingFor(r,all[i],i,sel);
+      let arr=dep-tm.arrivalBefore*1000;
+      let leave=dep-tm.departureBefore*1000;
+      /* With offsets expressed as “seconds before selected-station departure”,
+         a station's arrival must occur no later than its departure. */
+      if(leave<arr) leave=arr;
+      ev.push({idx:i,arr,leave});
+    }
+
+    if(now<ev[0].arr){
+      return {all,selectedIdx:sel,currentIdx:start,visible:false,state:'before',betweenAfter:null,progress:0};
+    }
+    for(let k=0;k<ev.length;k++){
+      const e=ev[k];
+      if(now>=e.arr && now<e.leave){
+        return {all,selectedIdx:sel,currentIdx:e.idx,visible:true,state:'station',betweenAfter:null,progress:0};
+      }
+      if(k<ev.length-1){
+        const nx=ev[k+1];
+        if(now>=e.leave && now<nx.arr){
+          const span=Math.max(1,nx.arr-e.leave);
+          const progress=Math.max(0,Math.min(1,(now-e.leave)/span));
+          return {all,selectedIdx:sel,currentIdx:e.idx+progress,visible:true,state:'between',betweenAfter:e.idx,progress};
+        }
+      }
+    }
+    return {all,selectedIdx:sel,currentIdx:sel,visible:true,state:'selected',betweenAfter:null,progress:1};
+  };
+
+  window.approachPositionHtml=function(t){
+    const p=window.selectedStationApproachState(t);
+    if(!p||!p.visible){
+      return `<div class="positionApproach"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram"><span style="color:#9aa4ad">接近前</span></div></div>`;
+    }
+    const start=Math.max(0,p.selectedIdx-3), view=p.all.slice(start,p.selectedIdx+1), n=Math.max(1,view.length);
+    const stationIdx=Number.isInteger(p.currentIdx)?p.currentIdx:-1;
+    let moving='';
+    if(p.state==='between' && Number.isInteger(p.betweenAfter) && n>1){
+      const rel=p.betweenAfter-start;
+      if(rel>=0&&rel<n-1){
+        const pct=((rel+Math.max(0,Math.min(1,Number(p.progress)||0)))/(n-1))*100;
+        moving=`<div class="approachBetweenLayerV32"><span class="approachBetweenMarkerV32" style="left:${pct.toFixed(3)}%"></span></div>`;
+      }
+    }
+    return `<div class="positionApproach" style="--line:${esc(route().lineColor||'#2680d9')}"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram">${view.map((name,j)=>{const real=start+j;return `<span class="approachStop ${real===stationIdx?'current':''}"><span class="approachStopName">${esc(name)}</span></span>`}).join('')}${moving}</div></div>`;
+  };
+
+  /* Existing render logic only needs a new key when the logical position changes.
+     A 5% travel bucket also lets the marker move across the line without redrawing
+     the entire board every frame. */
+  let last='';
+  setInterval(function(){
+    try{
+      if(data.mode!=='platform')return;
+      const r=route(); if(!r)return;
+      const f=upcoming(r).filter(t=>String(t.platform)===String(data.selected.platform))[0];
+      const p=f?window.selectedStationApproachState(f):null;
+      const bucket=p&&p.state==='between'?Math.floor((Number(p.progress)||0)*20):-1;
+      const k=f?[f.time,p?.state,p?.currentIdx,p?.betweenAfter,bucket].join('|'):'-';
+      if(k!==last){
+        last=k;
+        try{lastRenderKey='';}catch(_e){}
+        render();
+      }
+    }catch(_e){}
+  },250);
+
+  try{lastRenderKey='';render();}catch(_e){}
+})();
+</script>
+<style id="v33DiscretePositionStyle">
+/* V33: the platform position display has only three logical places:
+   previous station / between stations / selected station.  The marker never
+   slides continuously between stations. */
+.approachBetweenMarkerV33{
+  position:absolute!important;
+  left:50%!important;
+  bottom:14px!important;
+  transform:translateX(-50%)!important;
+  width:14px!important;height:14px!important;
+  border-radius:50%!important;
+  background:#cf3b4b!important;
+  border:2px solid #fff!important;
+  box-sizing:border-box!important;
+  box-shadow:0 0 8px rgba(207,59,75,.95)!important;
+  z-index:12!important;
+}
+.approachBetweenMarkerV33::after{
+  content:"現在位置"!important;
+  position:absolute!important;
+  left:50%!important;top:17px!important;
+  transform:translateX(-50%)!important;
+  white-space:nowrap!important;
+  color:#ff9da7!important;
+  font-size:10px!important;
+  line-height:1!important;
+  font-weight:800!important;
+  text-shadow:0 1px 2px #000!important;
+}
+.approachBetweenPairV33{
+  position:absolute!important;
+  left:0!important;right:0!important;top:0!important;bottom:0!important;
+  pointer-events:none!important;
+  z-index:10!important;
+}
+</style>
+<script id="v33DiscretePositionLogic">
+(function(){
+  function canon(v){
+    return String(v??'').trim()
+      .replace(/[（(［\[].*?[）)］\]]/g,'')
+      .replace(/[\s　]+/g,'')
+      .replace(/駅$/,'');
+  }
+  function depMs(t){
+    if(Number.isFinite(Number(t?._dep))) return Number(t._dep);
+    const now=new Date(),raw=String(t?.time||'').trim();
+    let hh=now.getHours(),mm=NaN;
+    if(raw.includes(':')){const a=raw.split(':').map(Number);hh=a[0];mm=a[1];}
+    else mm=Number(raw);
+    if(!Number.isFinite(hh)||!Number.isFinite(mm)) return now.getTime()+86400000;
+    const d=new Date(now);d.setHours(hh,mm,0,0);
+    if(d.getTime()<now.getTime()-43200000)d.setDate(d.getDate()+1);
+    if(d.getTime()>now.getTime()+43200000)d.setDate(d.getDate()-1);
+    return d.getTime();
+  }
+  function timing(r,name,idx,sel){
+    const map=(r&&r.stationTiming&&typeof r.stationTiming==='object'&&!Array.isArray(r.stationTiming))?r.stationTiming:{};
+    const key=Object.keys(map).find(k=>canon(k)===canon(name));
+    const x=key?map[key]:null;
+    if(x&&Number.isFinite(Number(x.arrivalBefore))&&Number.isFinite(Number(x.departureBefore))){
+      return {arrivalBefore:Math.max(0,Number(x.arrivalBefore)),departureBefore:Math.max(0,Number(x.departureBefore))};
+    }
+    const stopped=Math.max(1,Number(data?.settings?.stoppedSec)||50);
+    const secPer=Math.max(20,(Number(data?.settings?.currentMinutes)||3)*60);
+    const dwell=Math.min(30,Math.max(10,secPer*.12));
+    if(idx===sel)return {arrivalBefore:stopped,departureBefore:0};
+    const departureBefore=stopped+(sel-idx)*secPer;
+    return {arrivalBefore:departureBefore+dwell,departureBefore};
+  }
+
+  /* Discrete current-position state.
+     1) previous station: from its arrival until its departure
+     2) between: from previous-station departure until selected-station arrival
+     3) selected station: represented internally, but hidden while the train is
+        stopped at the selected station as requested. */
+  selectedStationApproachState=function(t){
+    const r=route(),all=Array.isArray(r?.stops)?r.stops:[];
+    const selectedRaw=data?.selected?.station||'';
+    const sel=all.findIndex(x=>canon(x)===canon(selectedRaw));
+    if(sel<0||!all.length)return null;
+
+    const dep=depMs(t),now=Date.now();
+    const self=timing(r,all[sel],sel,sel);
+    const selfArr=dep-self.arrivalBefore*1000;
+    const selfLeave=dep-self.departureBefore*1000;
+
+    /* Once the train has arrived at the selected station, it is stopped there.
+       Do not show the current-position panel during this dwell. */
+    if(now>=selfArr && now<selfLeave){
+      return {all,selectedIdx:sel,currentIdx:sel,visible:false,state:'stopped',betweenAfter:null};
+    }
+    if(now>=selfLeave){
+      return {all,selectedIdx:sel,currentIdx:sel,visible:false,state:'departed',betweenAfter:null};
+    }
+
+    const prev=sel-1;
+    if(prev<0)return {all,selectedIdx:sel,currentIdx:sel,visible:false,state:'before',betweenAfter:null};
+    const pt=timing(r,all[prev],prev,sel);
+    let prevArr=dep-pt.arrivalBefore*1000;
+    let prevLeave=dep-pt.departureBefore*1000;
+    if(prevLeave<prevArr)prevLeave=prevArr;
+
+    if(now<prevArr){
+      return {all,selectedIdx:sel,currentIdx:prev,visible:false,state:'before',betweenAfter:null};
+    }
+    if(now<prevLeave){
+      return {all,selectedIdx:sel,currentIdx:prev,visible:true,state:'previous',betweenAfter:null};
+    }
+    if(now<selfArr){
+      return {all,selectedIdx:sel,currentIdx:prev+.5,visible:true,state:'between',betweenAfter:prev};
+    }
+    return {all,selectedIdx:sel,currentIdx:sel,visible:false,state:'stopped',betweenAfter:null};
+  };
+
+  approachPositionHtml=function(t){
+    const p=selectedStationApproachState(t);
+    if(!p||!p.visible){
+      return `<div class="positionApproach"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram"><span style="color:#9aa4ad">接近前</span></div></div>`;
+    }
+
+    /* For this display we only need the previous station and the selected station.
+       This makes the three states visually unambiguous. */
+    const sel=p.selectedIdx,prev=Math.max(0,sel-1);
+    const view=p.all.slice(prev,sel+1);
+    const stationIdx=Number.isInteger(p.currentIdx)?p.currentIdx:-1;
+    const between=p.state==='between'
+      ? `<div class="approachBetweenPairV33"><span class="approachBetweenMarkerV33"></span></div>`
+      : '';
+    return `<div class="positionApproach" style="--line:${esc(route().lineColor||'#2680d9')}"><div class="positionApproachLabel">現在の走行位置</div><div class="approachDiagram">${view.map((name,j)=>{const real=prev+j;return `<span class="approachStop ${real===stationIdx?'current':''}"><span class="approachStopName">${esc(name)}</span></span>`}).join('')}${between}</div></div>`;
+  };
+
+  /* Redraw only when one of the discrete states changes.  No progress bucket is
+     used, so the marker stays fixed in the middle while the train is between stations. */
+  let v33Last='';
+  setInterval(function(){
+    try{
+      if(data.mode!=='platform')return;
+      const r=route();if(!r)return;
+      const f=upcoming(r).filter(t=>String(t.platform)===String(data.selected.platform))[0];
+      const p=f?selectedStationApproachState(f):null;
+      const key=f?[f.time,p?.state,p?.currentIdx,p?.visible].join('|'):'-';
+      if(key!==v33Last){
+        v33Last=key;
+        try{lastRenderKey='';}catch(_e){}
+        render();
+      }
+    }catch(_e){}
+  },250);
+
+  try{lastRenderKey='';render();}catch(_e){}
+})();
+</script>
